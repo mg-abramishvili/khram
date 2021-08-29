@@ -128,7 +128,7 @@
         methods: {
             GoToPage(id, types) {
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
-                this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
 
                 if(types[0].id === 5) {
                     this.$parent.reset_video = true
@@ -136,24 +136,24 @@
             },
             GoToPhotoalbums() {
                 this.$router.push({name: 'khram_Photoalbums'})
-                this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             GoToVideoalbums() {
                 this.$router.push({name: 'khram_Videoalbums'})
-                this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             GoToReviews() {
                 this.$router.push({name: 'khram_Reviews'})
-                this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             GoToRoutes() {
                 this.$router.push({name: 'khram_Routes'})
-                this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
                 this.$parent.reset_routes = true
             },
             GoToNews() {
                 this.$router.push({name: 'khram_News'})
-                this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             swiperArrows() {
                 if(document.querySelectorAll('.swiper-slide').length > 6) {
