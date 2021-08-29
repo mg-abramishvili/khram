@@ -1,3 +1,7 @@
+body {
+    font-family: 'Izhitsa Cyrillic', arial;
+}
+
 .wrapper {
     position: relative;
     width: 100vw;
@@ -9,8 +13,8 @@
 }
 
 .container {
-    width: 98vw;
-    max-width: 98vw;
+    width: 95vw;
+    max-width: 95vw;
 }
 
 ::-webkit-scrollbar {
@@ -55,6 +59,34 @@ border-color: #808080 transparent transparent transparent;
 
 ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
 border-color: #777777 transparent transparent transparent;
+}
+
+.header {
+    padding-top: 1vh;
+}
+
+.header-logo img {
+    width: auto;
+    height: auto;
+    max-width: 9vh;
+    max-height: 9vh;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-logo span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2.15vh;
+    margin-left: 1.25vh;
+    line-height: 1.35;
+}
+
+.header-logo a,
+.header-logo a:hover,
+.header-logo a:focus,
+.header-logo a:active {
+    color: #fff;
 }
 
 .BannerSwiper,
@@ -626,3 +658,11 @@ footer {
 /* FOOTER */
 
 
+
+
+@font-face{
+    font-family:izhitsa cyrillic;
+    font-style:normal;
+    font-weight:400;
+    src:local('Izhitsa Cyrillic'),local('Izhitsa-Cyrillic'),url(/img/khram/izhitsa-cyrillic_faff1a3b667e55ec8df47afa0e1c2ffd.woff) format('woff'),url(/img/khram/izhitsa-cyrillic_faff1a3b667e55ec8df47afa0e1c2ffd.ttf) format('truetype')
+}

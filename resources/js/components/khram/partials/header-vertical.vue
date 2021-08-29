@@ -1,10 +1,10 @@
 <template>
     <div class="header">
         <div class="header-logo">
-            <router-link :to="{name: 'khram_Home'}"><img :src="settings.logo"></router-link>
-        </div>
-        <div class="header-text">
-            <div v-if="settings.title" class="header-title" v-html="settings.title.replace('*','<br>')"></div>
+            <router-link :to="{name: 'khram_Home'}">
+                <img :src="settings.logo">
+                <span v-if="settings.title" v-html="settings.title.replace('*','<br>')"></span>
+            </router-link>
         </div>
     </div>
 </template>

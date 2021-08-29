@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="width: 100%;">
         <div class="banner">
             <template v-for="banner in banners">
                 <div class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></div>
