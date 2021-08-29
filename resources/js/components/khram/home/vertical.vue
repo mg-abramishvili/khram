@@ -1,41 +1,48 @@
 <template>
     <div style="width: 100%;">
         <div class="banner">
-            <template v-for="banner in banners">
-                <div class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></div>
-            </template>
+            <swiper ref="IndexBannerSwiper" :options="swiperOptions">
+                <swiper-slide v-for="banner in banners" :key="'banner' + banner.id" class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></swiper-slide>
+                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
+                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
+            </swiper>
         </div>
+
+        <div class="headline">
+            Свет Христов просвещает всех!
+        </div>
+
         <div class="user-pages">
             <div class="row">
                 <div v-if="settings.module_photoalbums == 'y'" class="col-6">
-                    <a @click="GoToPhotoalbums()">
-                        <div class="user-pages-item-item_bg" style="background-image: url(/img/khram/7.jpg);"></div>
-                        <div class="user-pages-item-item_label">
+                    <a @click="GoToPhotoalbums()" class="index-button">
+                        <div class="index-button_pic" style="background-image: url(/img/khram/7.jpg);"></div>
+                        <div class="index-button_label">
                             Фотогалерея
                         </div>
                     </a>
                 </div>
 
                 <div v-if="settings.module_news == 'y'" class="col-6">
-                    <a @click="GoToNews()">
-                        <div class="user-pages-item-item_bg" style="background-image: url(/img/khram/6.jpg);"></div>
-                        <div class="user-pages-item-item_label">
+                    <a @click="GoToNews()" class="index-button">
+                        <div class="index-button_pic" style="background-image: url(/img/khram/6.jpg);"></div>
+                        <div class="index-button_label">
                             Новости
                         </div>
                     </a>
                 </div>
 
                 <div v-for="page in pages" :key="page.id" class="col-6">
-                    <a @click="GoToPage(page.id, page.types)">
+                    <a @click="GoToPage(page.id, page.types)" class="index-button">
                         <template v-if="page.image_as_icon === '1'">
-                            <div class="user-pages-item-item_bg" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
+                            <div class="index-button_pic" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                         </template>
                         
                         <template v-else>
-                            <div class="user-pages-item-item_bg"></div>
+                            <div class="index-button_pic"></div>
                         </template>
                         
-                        <div class="user-pages-item-item_label">
+                        <div class="index-button_label">
                             {{ page.title }}
                         </div>
                         
@@ -43,18 +50,18 @@
                 </div>
 
                 <div v-if="settings.module_routes == 'y'" class="col-6">
-                    <a @click="GoToRoutes()">
-                        <div class="user-pages-item-item_bg" style="background-image: url(/img/khram/2.jpg);"></div>
-                        <div class="user-pages-item-item_label">
+                    <a @click="GoToRoutes()" class="index-button">
+                        <div class="index-button_pic" style="background-image: url(/img/khram/2.jpg);"></div>
+                        <div class="index-button_label">
                             План здания
                         </div>
                     </a>
                 </div>
 
                 <div v-if="settings.module_reviews == 'y'" class="col-6">
-                    <a @click="GoToReviews()">
-                        <div class="user-pages-item-item_bg" style="background-image: url(/img/khram/3.jpg);"></div>
-                        <div class="user-pages-item-item_label">
+                    <a @click="GoToReviews()" class="index-button">
+                        <div class="index-button_pic" style="background-image: url(/img/khram/3.jpg);"></div>
+                        <div class="index-button_label">
                             Отзывы
                         </div>
                     </a>
@@ -79,15 +86,18 @@
                 banners: [],
                 photoalbum_last: {},
                 swiperOptions: {
-                    slidesPerView: 2,
-                    slidesPerColumn: 3,
-                    slidesPerColumnFill: 'column',
+                    slidesPerView: 1,
+                    speed: 800,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    },
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
                     },
                 },
-                slider_prev_next: true,
+                slider_prev_next: false,
             }
         },
         created() {
@@ -156,7 +166,7 @@
                 //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             swiperArrows() {
-                if(document.querySelectorAll('.swiper-slide').length > 6) {
+                if(document.querySelectorAll('.swiper-slide').length > 60) {
                     this.slider_prev_next = true
                 } else {
                     this.slider_prev_next = false
@@ -165,7 +175,7 @@
         },
         computed: {
             swiper() {
-                return this.$refs.KhramIndexAllSwiper.$swiper
+                return this.$refs.IndexBannerSwiper.$swiper
             }
         },
         components: {
