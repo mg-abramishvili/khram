@@ -36,6 +36,7 @@
                     <a @click="GoToPage(page.id, page.types)" class="index-button">
                         <template v-if="page.image_as_icon === '1'">
                             <div class="index-button_pic" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
+                            <div class="index-button_minipic" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                         </template>
                         
                         <template v-else>
