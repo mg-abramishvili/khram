@@ -1,0 +1,48 @@
+.activation_panel {
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999999999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white;
+}
+.activation_panel input {
+    width: 30vw;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5vh;
+    text-align: center;
+    border: 0.1vh solid;
+    height: 6vh;
+}
+.activate_button {
+    width: 30vw;
+    text-align: center;
+    font-size: 2.5vh;
+    box-shadow: none;
+    border: 0;
+    background-color: rgb(56, 175, 56);
+    color: #fff;
+    display: block;
+    padding: 1.5vh;
+    margin: 0 auto;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+}
+.activate_response {
+    display: block;
+    width: 30vw;
+    font-size: 2vh;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2vh;
+    color: red;
+}
+.activation_panel .hg-theme-default {
+    width: 80%;
+    margin: 0 auto;
+}
+.activation_panel .hg-theme-default .hg-button {
+    height: 6vh;
+}

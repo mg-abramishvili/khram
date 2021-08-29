@@ -1,0 +1,35 @@
+<template>
+    <div class="header">
+        <div class="header-logo">
+            <router-link :to="{name: 'khram_Home'}"><img :src="settings.logo"></router-link>
+        </div>
+        <div class="header-text">
+            <div v-if="settings.title" class="header-title" v-html="settings.title.replace('*','<br>')"></div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                settings: {},
+            }
+        },
+        created() {
+            fetch(`/api/front/settings/`)
+                .then(response => response.json())
+                .then(json => {
+                    this.settings = json;
+                });
+        },
+        methods: {
+            GoToVideoalbums() {
+                this.$router.push({name: 'khram_Videoalbums'})
+                //this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false)
+            },
+        },
+        components: {
+        }
+    }
+</script>
