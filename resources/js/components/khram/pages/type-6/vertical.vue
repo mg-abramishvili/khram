@@ -8,23 +8,16 @@
         </div>
 
         <swiper ref="PagesSwiper" :options="swiperOptions" class="PagesSwiper">
-            <swiper-slide v-for="child in page.children" :key="child.id" class="user-pages-item-item">
-                <div @click="GoToPage(child.id)" class="index-button">
-                    <div v-if="child.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }"></div>
-                    <span v-if="child.image_as_icon === '1'" class="t6-p">{{ child.title }}</span>
-                    <div v-if="child.image_as_icon === '0' && child.icons[0]" class="index-button-icon">
-                        <img :src="child.icons[0].icon">
-                    </div>
-                    <div v-if="child.image_as_icon === '0' && child.icons.length <= 0" class="index-button-icon">
-                        <img src="/img/icons/029-information.svg">
-                    </div>
-                    <span v-if="child.image_as_icon === '0'">{{ child.title }}</span>
+            <swiper-slide v-for="child in page.children" :key="child.id" class="t6-button">
+                <div @click="GoToPage(child.id)" class="t6-button_inner" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }">
+                    <div v-if="child.image_as_icon === '1'" class="t6-button_image" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }"></div>
+                    <span><i>{{ child.title }}</i></span>
                 </div>
             </swiper-slide>
         </swiper>
 
-            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 1.3vw"></div>
-            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 1.3vw"></div>
+        <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 1.3vw"></div>
+        <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 1.3vw"></div>
         </div>
     </div>
 </template>
@@ -39,6 +32,8 @@
                 page: [],
                 swiperOptions: {
                     slidesPerView: 3,
+                    slidesPerColumn: 3,
+                    slidesPerColumnFill: 'row',
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
