@@ -1,6 +1,12 @@
 <template>
     <div class="header">
-        <div class="header-logo">
+        <div v-if="$route.name === 'khram_Home'" class="header-logo">
+            <router-link :to="{name: 'khram_Home'}">
+                <img :src="settings.logo">
+                <span v-if="settings.title" v-html="settings.title.replace('*','<br>')"></span>
+            </router-link>
+        </div>
+        <div v-else class="header-logo header-logo-mini">
             <router-link :to="{name: 'khram_Home'}">
                 <img :src="settings.logo">
                 <span v-if="settings.title" v-html="settings.title.replace('*','<br>')"></span>

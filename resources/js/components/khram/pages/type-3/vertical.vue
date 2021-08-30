@@ -3,11 +3,7 @@
         
         <div v-if="page.gallery">
             <div class="subheader">
-                    <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">{{ page.title }}</h1>
-                </div>
-
-            <div class="page-detail-text mb-0" style="height: 65vh; background: white; padding: 4vh">
-                <div v-html="page.text"></div>
+                <h1 class="h1-page">{{ page.title }}</h1>
             </div>
 
             <swiper ref="PageSwiper" :options="swiperOptions" class="PageSwiper">
@@ -18,6 +14,10 @@
                 <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
                 
             </swiper>
+
+            <div class="page-detail-text mb-0" style="height: 47vh; padding: 0; padding-right: 1vh;">
+                <div v-html="page.text"></div>
+            </div>
 
         </div>
 
@@ -33,14 +33,14 @@
             return {
                 page: [],
                 swiperOptions: {
-                    slidesPerView: 3,
+                    slidesPerView: 1,
                     //simulateTouch: false,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
                     }
                 },
-                slider_prev_next: false,
+                slider_prev_next: true,
             }
         },
         created() {

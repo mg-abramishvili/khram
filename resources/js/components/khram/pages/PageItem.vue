@@ -1,7 +1,7 @@
 <template>
     <div v-if="settings.orientation === 'vertical'">
         
-        <div v-for="type in page.types" :key="type.id" class="container" style="position: relative; height: 100vh; background: transparent;">
+        <div v-for="type in page.types" :key="type.id" class="container" style="position: relative; background: transparent;">
             <div class="page-item">
                 <KhramPageType1Vertical v-if="type.id == '1'" />
                 <KhramPageType2Vertical v-if="type.id == '2'" />
@@ -15,19 +15,21 @@
             </div>
         </div>
 
-        <div class="subback">
-            <router-link :to="{name: 'khram_Home'}">
-                <i style="font-style: normal; color: #fff">←</i> Главная
-            </router-link>
+        <div class="footer">
+            
             <template v-if="page.parent_id">
                 <template v-for="parent_page in pages">
                     <template v-if="parent_page.id == page.parent_id">
-                        <router-link :to="{name: 'khram_PageItem', params: {id: parent_page.id}}" class="gal-button" style="margin-left: 1vh;">
+                        <router-link :to="{name: 'khram_PageItem', params: {id: parent_page.id}}">
                             <i style="font-style: normal; color: #fff">←</i> {{ parent_page.title }}
                         </router-link>
                     </template>
                 </template>
             </template>
+
+            <router-link :to="{name: 'khram_Home'}">
+                <img src="/img/khram/home.svg">
+            </router-link>
         </div>
         
 

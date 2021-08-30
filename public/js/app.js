@@ -2583,6 +2583,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2864,6 +2867,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -3108,14 +3113,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       page: [],
       swiperOptions: {
-        slidesPerView: 3,
+        slidesPerView: 1,
         //simulateTouch: false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }
       },
-      slider_prev_next: false
+      slider_prev_next: true
     };
   },
   created: function created() {
@@ -3580,6 +3585,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4534,7 +4545,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\r\n    font-family: 'Izhitsa Cyrillic', arial;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 100vh;\r\n    max-height: 177.77vw;\r\n    height: 177.78vw;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n}\r\n\r\n.container {\r\n    width: 92vw;\r\n    max-width: 92vw;\r\n}\r\n\r\n.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {\r\n    padding-right: 0.5vh;\r\n    padding-left: 0.5vh;\r\n}\r\n\r\n.row {\r\n    margin-right: -0.5vh;\r\n    margin-left: -0.5vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-right: 0.5vh;\r\n    padding-left: 0.5vh;\r\n}\r\n\r\n::-webkit-scrollbar {\r\nwidth: 2vw;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\nbackground: #dddddd;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\nbackground: #966545;\r\nborder: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\nbackground: #966545;\r\n}\r\n\r\n/* Buttons */\r\n::-webkit-scrollbar-button:single-button {\r\nbackground-color: #dddddd;\r\ndisplay: block;\r\nborder-style: solid;\r\nheight: 1.5vw;\r\nwidth: 2vw;\r\n}\r\n/* Up */\r\n::-webkit-scrollbar-button:single-button:vertical:decrement {\r\nborder-width: 0 1vw 1vw 1vw;\r\nborder-color: transparent transparent #808080 transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:single-button:vertical:decrement:hover {\r\nborder-color: transparent transparent #777777 transparent;\r\n}\r\n/* Down */\r\n::-webkit-scrollbar-button:single-button:vertical:increment {\r\nborder-width: 1vw 1vw 0 1vw;\r\nborder-color: #808080 transparent transparent transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:vertical:single-button:increment:hover {\r\nborder-color: #777777 transparent transparent transparent;\r\n}\r\n\r\n.header {\r\n    padding-top: 1vh;\r\n}\r\n\r\n.header-logo img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 9vh;\r\n    max-height: 9vh;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.header-logo span {\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    font-size: 2.11vh;\r\n    margin-left: 1.25vh;\r\n    line-height: 1.35;\r\n}\r\n\r\n.header-logo a,\r\n.header-logo a:hover,\r\n.header-logo a:focus,\r\n.header-logo a:active {\r\n    color: #fff;\r\n}\r\n\r\n.banner {\r\n    border-radius: 2vh;\r\n    overflow: hidden;\r\n    margin-top: 1.5vh;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.index-banner-slide {\r\n    height: 30vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.banner-slide {\r\n    height: 35vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.headline {\r\n    font-size: 3.4vh;\r\n    color: #1E60A2;\r\n    text-align: center;\r\n    margin-bottom: 1.5vh;\r\n    text-shadow:\r\n    0.4vh 0 0 #fff,\r\n    -0.4vh 0 0 #fff,\r\n    0 0.4vh 0 #fff,\r\n    0 -0.4vh 0 #fff,\r\n    0.3vh 0.3vh #fff,\r\n    -0.3vh -0.3vh 0 #fff,\r\n    0.3vh -0.3vh 0 #fff,\r\n    -0.3vh 0.3vh 0 #fff;\r\n}\r\n\r\n.index-button {\r\n    height: 9vh;\r\n    display: block;\r\n    margin-bottom: 1.2vh;\r\n    border-top-left-radius: 5vh;\r\n    border-bottom-left-radius: 5vh;\r\n    border-top-right-radius: 1vh;\r\n    border-bottom-right-radius: 1vh;\r\n    overflow: hidden;\r\n    position: relative;\r\n    box-shadow: 0 0.1vh 1.5vh rgba(0, 5, 77, 0.15);\r\n}\r\n\r\n.user-pages .row .col-6:nth-child(2n) .index-button {\r\n    border-top-left-radius: 1vh;\r\n    border-bottom-left-radius: 1vh;\r\n    border-top-right-radius: 5vh;\r\n    border-bottom-right-radius: 5vh;\r\n}\r\n\r\n.index-button_pic {\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    height: 9vh;\r\n    position: relative;\r\n    filter: grayscale(100%);\r\n}\r\n\r\n.index-button_pic:before {\r\n    content: '';\r\n    position: absolute;\r\n    z-index: 1;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(255,255,255,0.85);\r\n}\r\n\r\n.index-button_minipic {\r\n    width: 8vh;\r\n    height: 8vh;\r\n    border-radius: 100%;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0.5vh;\r\n}\r\n\r\n.user-pages .row .col-6:nth-child(2n) .index-button_minipic {\r\n    left: auto;\r\n    right: 0.5vh;\r\n}\r\n\r\n.index-button_label {\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    font-size: 1.95vh;\r\n    color: #222A72;\r\n    right: 0.5vh;\r\n    left: 9vh;\r\n    line-height: 1.2;\r\n}\r\n\r\n.user-pages .row .col-6:nth-child(2n) .index-button_label {\r\n    left: auto;\r\n    right: 9vh;\r\n    text-align: right;\r\n}\r\n\r\n.page-item {\r\n    background-color: #fff;\r\n    height: 60vh;\r\n    max-height: 60vh;\r\n    margin-top: 1vh;\r\n}\r\n\r\n.header-sub {\r\n    height: 20vh;\r\n}\r\n\r\n.header-sub .m-logo {\r\n    width: 11vh;\r\n    height: 11vh;\r\n    margin-top: 3vh;\r\n    margin-bottom: 0;\r\n    border-width: 0.4vh;\r\n}\r\n\r\n.header-sub .m-logo a {\r\n    display: block;\r\n    height: 100%;\r\n}\r\n\r\n.header-sub .m-title p {\r\n    font-size: 1.7vh;\r\n    text-align: center;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.PagesSwiper {\r\n    background: #171F19;\r\n}\r\n\r\n.PagesSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.PhotoalbumsSwiper .index-button,\r\n.VideoalbumsSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    /*width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;*/\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.gallery-detail-item img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 80vw;\r\n    max-height: 60vh;\r\n    transform: none;\r\n}\r\n\r\n.swiper-button-next,\r\n.swiper-button-prev {\r\n    z-index: 999;\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.h1-page {\r\n    font-weight: normal;\r\n    font-size: 2vh;\r\n    text-align: center;\r\n    margin-bottom: 2vh;\r\n    height: 5vh;\r\n    margin-top: 2vh;\r\n}\r\n\r\n.type-1 {\r\n    padding: 0;\r\n}\r\n\r\n.type-1 .page-detail-text {\r\n    height: 51vh;\r\n    font-size: 1.5vh !important;\r\n    padding: 4vh;\r\n}\r\n\r\n.type-2 {\r\n    padding: 0;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 31vh;\r\n    font-size: 1.5vh !important;\r\n    padding: 4vh;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.type-2 .page-detail-image {\r\n    height: 20vh;\r\n    margin-bottom: 2vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    margin: 0 4vh;\r\n}\r\n\r\n.type-3 {\r\n    padding: 0;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    padding-left: 0;\r\n    padding: 4vh;\r\n    padding-top: 2vh;\r\n    height: 35vh;\r\n    font-size: 1.5vh !important;\r\n    overflow-y: auto;\r\n}\r\n\r\n.type3slider {\r\n    margin-top: 2vh;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-7 .text {\r\n    height: 48vh;\r\n    width: 100%;\r\n}\r\n\r\n.type-7 iframe {\r\n    margin-bottom: 2vh;\r\n    height: 56vh;\r\n}\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 57vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n    background-color: #fff;\r\n    padding: 2vh;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.1vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n.review-form textarea {\r\n    height: 25vh;\r\n    width: calc(100% - 4vh);\r\n    display: block;\r\n    margin: 0 auto;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.keyboard-reviews {\r\n    padding: 2vh;\r\n}\r\n\r\n.hg-theme-default .hg-button {\r\n    height: 3vh;\r\n}\r\n\r\n.btn-med {\r\n    background-color: #966545;\r\n    color: #fff;\r\n    padding: 1.25vh 4vh;\r\n    text-align: center;\r\n    border-radius: 1vh;\r\n    font-size: 2vh;\r\n    width: 32vw;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 2vh;\r\n}\r\n\r\n.news-list {\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style-type: none;\r\n    overflow-y: auto;\r\n    height: 60vh;\r\n}\r\n\r\n.news-list-item,\r\n.news-list-item:nth-child(2n+2) {\r\n    background-color: #976545;\r\n}\r\n\r\n.news-list-item a {\r\n    margin: 0;\r\n    padding: 2vh;\r\n    border: 0;\r\n    border-bottom: 0.25vh solid #BDB79F;;\r\n    position: relative;\r\n    display: block;\r\n    height: 17vh;\r\n}\r\n\r\n.news-item-image,\r\n.news-item-image:after {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    z-index: 1;\r\n}\r\n\r\n.news-item-image:after {\r\n    content: '';\r\n    z-index: 2;\r\n    background-color: rgba(131, 75, 40, 0.75);\r\n}\r\n\r\n.news-list-item:nth-child(2n+2) .news-item-image:after {\r\n    background-color: rgba(96, 147, 65, 0.75);\r\n}\r\n\r\n.news-list-item h2 {\r\n    padding: 0;\r\n    font-size: 2vh;\r\n    position: absolute;\r\n    top: 2vh;\r\n    left: 2vh;\r\n    z-index: 10;\r\n    height: 7vh;\r\n    color: #fff;\r\n}\r\n\r\n.news-list-item-text-preview {\r\n    padding: 0;\r\n    font-size: 1.5vh !important;\r\n    color: rgba(255,255,255,0.6) !important;\r\n    position: absolute;\r\n    top: 10vh;\r\n    z-index: 10;\r\n}\r\n\r\n.news-list-item-text-preview p {\r\n    margin: 0;\r\n    font-size: 1.5vh !important;\r\n    color: rgba(255,255,255,0.6) !important;\r\n}\r\n\r\n.news-item-text h1 {\r\n    font-size: 2.5vh;\r\n    color: #333;\r\n    font-weight: normal;\r\n}\r\n\r\n.news-item-text,\r\n.news-item-text p {\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.news-item-cover {\r\n    height: 25vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    margin-bottom: 2vh;\r\n}\r\n\r\n.swiper-button-prev, .swiper-button-next {\r\n    border-radius: 100%;\r\n    width: 3vh;\r\n    height: 3vh;\r\n    color: #fff;\r\n    font-size: 2vh;\r\n    background-color: #4B7F2B;\r\n    border: 0.2vh solid #fff;\r\n}\r\n\r\n.swiper-button-prev:after, .swiper-button-next:after {\r\n    font-size: 1.5vh;\r\n}\r\n\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    height: 5vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.muzei-home {\r\n    background-color: #2886bb;\r\n    width: 6vh;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    position: relative;\r\n    margin-right: 3vh;\r\n    padding-left: 1vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.muzei-home-sub {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.muzei-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-home-sub:after {\r\n    border-left-color: #4B7F2B;\r\n    z-index: 10;\r\n}\r\n\r\n.muzei-home img {\r\n    width: 4.5vh;\r\n    margin-top: 0.25vh;\r\n}\r\n\r\n.muzei-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #71a551;\r\n    width: auto;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    padding-left: 4vh;\r\n    padding-right: 0.5vh;\r\n    margin-left: -3.5vh;\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    margin-right: 3vh;\r\n}\r\n\r\n.muzei-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:focus,\r\n.muzei-footer-second:hover,\r\n.muzei-footer-third:focus,\r\n.muzei-footer-third:hover {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.muzei-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.muzei-footer-third {\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    color: #fff;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n\r\n\r\n@font-face{\r\n    font-family:izhitsa cyrillic;\r\n    font-style:normal;\r\n    font-weight:400;\r\n    src:local('Izhitsa Cyrillic'),local('Izhitsa-Cyrillic'),url(/img/khram/izhitsa-cyrillic_faff1a3b667e55ec8df47afa0e1c2ffd.woff) format('woff'),url(/img/khram/izhitsa-cyrillic_faff1a3b667e55ec8df47afa0e1c2ffd.ttf) format('truetype')\r\n}", ""]);
+exports.push([module.i, "body {\r\n    font-family: 'Izhitsa Cyrillic', arial;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 100vh;\r\n    max-height: 177.77vw;\r\n    height: 177.78vw;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n}\r\n\r\n.container {\r\n    width: 92vw;\r\n    max-width: 92vw;\r\n}\r\n\r\n.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {\r\n    padding-right: 0.5vh;\r\n    padding-left: 0.5vh;\r\n}\r\n\r\n.row {\r\n    margin-right: -0.5vh;\r\n    margin-left: -0.5vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-right: 0.5vh;\r\n    padding-left: 0.5vh;\r\n}\r\n\r\n::-webkit-scrollbar {\r\nwidth: 2vw;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\nbackground: #dddddd;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\nbackground: #966545;\r\nborder: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\nbackground: #966545;\r\n}\r\n\r\n/* Buttons */\r\n::-webkit-scrollbar-button:single-button {\r\nbackground-color: #dddddd;\r\ndisplay: block;\r\nborder-style: solid;\r\nheight: 1.5vw;\r\nwidth: 2vw;\r\n}\r\n/* Up */\r\n::-webkit-scrollbar-button:single-button:vertical:decrement {\r\nborder-width: 0 1vw 1vw 1vw;\r\nborder-color: transparent transparent #808080 transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:single-button:vertical:decrement:hover {\r\nborder-color: transparent transparent #777777 transparent;\r\n}\r\n/* Down */\r\n::-webkit-scrollbar-button:single-button:vertical:increment {\r\nborder-width: 1vw 1vw 0 1vw;\r\nborder-color: #808080 transparent transparent transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:vertical:single-button:increment:hover {\r\nborder-color: #777777 transparent transparent transparent;\r\n}\r\n\r\n.header {\r\n    padding-top: 1vh;\r\n}\r\n\r\n.header-logo img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 9vh;\r\n    max-height: 9vh;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.header-logo-mini img {\r\n    max-width: 4vh;\r\n    max-height: 4vh;\r\n}\r\n\r\n.header-logo span {\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    font-size: 2.11vh;\r\n    margin-left: 1.25vh;\r\n    line-height: 1.35;\r\n}\r\n\r\n.header-logo-mini span {\r\n    font-size: 1.32vh;\r\n    margin-left: 0.5vh;\r\n}\r\n\r\n.header-logo-mini span br {\r\n    display: none;\r\n}\r\n\r\n.header-logo a,\r\n.header-logo a:hover,\r\n.header-logo a:focus,\r\n.header-logo a:active {\r\n    color: #fff;\r\n}\r\n\r\n.banner {\r\n    border-radius: 2vh;\r\n    overflow: hidden;\r\n    margin-top: 1.5vh;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.index-banner-slide {\r\n    height: 30vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.banner-slide {\r\n    height: 35vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.headline {\r\n    font-size: 3.4vh;\r\n    color: #1E60A2;\r\n    text-align: center;\r\n    margin-bottom: 1.5vh;\r\n    text-shadow:\r\n    0.4vh 0 0 #fff,\r\n    -0.4vh 0 0 #fff,\r\n    0 0.4vh 0 #fff,\r\n    0 -0.4vh 0 #fff,\r\n    0.3vh 0.3vh #fff,\r\n    -0.3vh -0.3vh 0 #fff,\r\n    0.3vh -0.3vh 0 #fff,\r\n    -0.3vh 0.3vh 0 #fff;\r\n}\r\n\r\n.index-button {\r\n    height: 9vh;\r\n    display: block;\r\n    margin-bottom: 1.2vh;\r\n    border-top-left-radius: 5vh;\r\n    border-bottom-left-radius: 5vh;\r\n    border-top-right-radius: 1vh;\r\n    border-bottom-right-radius: 1vh;\r\n    overflow: hidden;\r\n    position: relative;\r\n    box-shadow: 0 0.1vh 1.5vh rgba(0, 5, 77, 0.15);\r\n}\r\n\r\n.user-pages .row .col-6:nth-child(2n) .index-button {\r\n    border-top-left-radius: 1vh;\r\n    border-bottom-left-radius: 1vh;\r\n    border-top-right-radius: 5vh;\r\n    border-bottom-right-radius: 5vh;\r\n}\r\n\r\n.index-button_pic {\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    height: 9vh;\r\n    position: relative;\r\n    filter: grayscale(100%);\r\n}\r\n\r\n.index-button_pic:before {\r\n    content: '';\r\n    position: absolute;\r\n    z-index: 1;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(255,255,255,0.85);\r\n}\r\n\r\n.index-button_minipic {\r\n    width: 8vh;\r\n    height: 8vh;\r\n    border-radius: 100%;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0.5vh;\r\n}\r\n\r\n.user-pages .row .col-6:nth-child(2n) .index-button_minipic {\r\n    left: auto;\r\n    right: 0.5vh;\r\n}\r\n\r\n.index-button_label {\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    font-size: 1.95vh;\r\n    color: #222A72;\r\n    right: 0.5vh;\r\n    left: 9vh;\r\n    line-height: 1.2;\r\n}\r\n\r\n.user-pages .row .col-6:nth-child(2n) .index-button_label {\r\n    left: auto;\r\n    right: 9vh;\r\n    text-align: right;\r\n}\r\n\r\n.page-item {\r\n    background-color: transparent;\r\n    margin-top: 1vh;\r\n}\r\n\r\n.header-sub {\r\n    height: 20vh;\r\n}\r\n\r\n.header-sub .m-logo {\r\n    width: 11vh;\r\n    height: 11vh;\r\n    margin-top: 3vh;\r\n    margin-bottom: 0;\r\n    border-width: 0.4vh;\r\n}\r\n\r\n.header-sub .m-logo a {\r\n    display: block;\r\n    height: 100%;\r\n}\r\n\r\n.header-sub .m-title p {\r\n    font-size: 1.7vh;\r\n    text-align: center;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.PagesSwiper {\r\n    background: #171F19;\r\n}\r\n\r\n.PagesSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.PhotoalbumsSwiper .index-button,\r\n.VideoalbumsSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    /*width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;*/\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.gallery-detail-item img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 80vw;\r\n    max-height: 60vh;\r\n    transform: none;\r\n}\r\n\r\n.swiper-button-next,\r\n.swiper-button-prev {\r\n    z-index: 999;\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.h1-page {\r\n    font-weight: 400;\r\n    text-transform: uppercase;\r\n    font-size: 2.1vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    margin: 0;\r\n    margin-top: -0.5vh;\r\n    padding: 0 1vh;\r\n    height: 5vh;\r\n    overflow: hidden;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.type-1 {\r\n    padding: 0;\r\n}\r\n\r\n.type-1 .page-detail-text {\r\n    height: 51vh;\r\n    font-size: 1.5vh !important;\r\n    padding: 4vh;\r\n}\r\n\r\n.type-2 {\r\n    padding: 0;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 31vh;\r\n    font-size: 1.5vh !important;\r\n    padding: 4vh;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.type-2 .page-detail-image {\r\n    height: 20vh;\r\n    margin-bottom: 2vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    margin: 0 4vh;\r\n}\r\n\r\n.type-3 {\r\n    padding: 0;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    padding-left: 0;\r\n    padding: 4vh;\r\n    padding-top: 2vh;\r\n    height: 35vh;\r\n    font-size: 1.75vh !important;\r\n    line-height: 1.3 !important;\r\n    overflow-y: auto;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin: 0 !important;\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n.type3slider {\r\n    margin-top: 2vh;\r\n    margin-bottom: 2vh;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 28vh;\r\n    background-size: contain;\r\n    background-position: 50% 50%;\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.type-7 .text {\r\n    height: 48vh;\r\n    width: 100%;\r\n}\r\n\r\n.type-7 iframe {\r\n    margin-bottom: 2vh;\r\n    height: 56vh;\r\n}\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 57vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n    background-color: #fff;\r\n    padding: 2vh;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.1vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n.review-form textarea {\r\n    height: 25vh;\r\n    width: calc(100% - 4vh);\r\n    display: block;\r\n    margin: 0 auto;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.keyboard-reviews {\r\n    padding: 2vh;\r\n}\r\n\r\n.hg-theme-default .hg-button {\r\n    height: 3vh;\r\n}\r\n\r\n.btn-med {\r\n    background-color: #966545;\r\n    color: #fff;\r\n    padding: 1.25vh 4vh;\r\n    text-align: center;\r\n    border-radius: 1vh;\r\n    font-size: 2vh;\r\n    width: 32vw;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 2vh;\r\n}\r\n\r\n.news-list {\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style-type: none;\r\n    overflow-y: auto;\r\n    height: 60vh;\r\n}\r\n\r\n.news-list-item,\r\n.news-list-item:nth-child(2n+2) {\r\n    background-color: #976545;\r\n}\r\n\r\n.news-list-item a {\r\n    margin: 0;\r\n    padding: 2vh;\r\n    border: 0;\r\n    border-bottom: 0.25vh solid #BDB79F;;\r\n    position: relative;\r\n    display: block;\r\n    height: 17vh;\r\n}\r\n\r\n.news-item-image,\r\n.news-item-image:after {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    z-index: 1;\r\n}\r\n\r\n.news-item-image:after {\r\n    content: '';\r\n    z-index: 2;\r\n    background-color: rgba(131, 75, 40, 0.75);\r\n}\r\n\r\n.news-list-item:nth-child(2n+2) .news-item-image:after {\r\n    background-color: rgba(96, 147, 65, 0.75);\r\n}\r\n\r\n.news-list-item h2 {\r\n    padding: 0;\r\n    font-size: 2vh;\r\n    position: absolute;\r\n    top: 2vh;\r\n    left: 2vh;\r\n    z-index: 10;\r\n    height: 7vh;\r\n    color: #fff;\r\n}\r\n\r\n.news-list-item-text-preview {\r\n    padding: 0;\r\n    font-size: 1.5vh !important;\r\n    color: rgba(255,255,255,0.6) !important;\r\n    position: absolute;\r\n    top: 10vh;\r\n    z-index: 10;\r\n}\r\n\r\n.news-list-item-text-preview p {\r\n    margin: 0;\r\n    font-size: 1.5vh !important;\r\n    color: rgba(255,255,255,0.6) !important;\r\n}\r\n\r\n.news-item-text h1 {\r\n    font-size: 2.5vh;\r\n    color: #333;\r\n    font-weight: normal;\r\n}\r\n\r\n.news-item-text,\r\n.news-item-text p {\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.news-item-cover {\r\n    height: 25vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    margin-bottom: 2vh;\r\n}\r\n\r\n.swiper-button-prev, .swiper-button-next {\r\n    border-radius: 100%;\r\n    width: 3vh;\r\n    height: 3vh;\r\n    color: #fff;\r\n    font-size: 2vh;\r\n    background-color: #4B7F2B;\r\n    border: 0.2vh solid #fff;\r\n}\r\n\r\n.swiper-button-prev:after, .swiper-button-next:after {\r\n    font-size: 1.5vh;\r\n}\r\n\r\n\r\n\r\n/* FOOTER */\r\n\r\n.footer {\r\n    background: red;\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    color: #fff;\r\n    padding: 1vh 1vh;\r\n    text-align: center;\r\n}\r\n\r\n.footer a {\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n\r\n.footer a img {\r\n    display: block;\r\n    margin: 0 auto;\r\n    width: auto;\r\n    height: 3.5vh;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n\r\n\r\n@font-face{\r\n    font-family:izhitsa cyrillic;\r\n    font-style:normal;\r\n    font-weight:400;\r\n    src:local('Izhitsa Cyrillic'),local('Izhitsa-Cyrillic'),url(/img/khram/izhitsa-cyrillic_faff1a3b667e55ec8df47afa0e1c2ffd.woff) format('woff'),url(/img/khram/izhitsa-cyrillic_faff1a3b667e55ec8df47afa0e1c2ffd.ttf) format('truetype')\r\n}", ""]);
 
 // exports
 
@@ -38333,41 +38344,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
+  return _c("div", [
+    _c("div", {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.$route.name === "khram_Home",
+          expression: "$route.name === 'khram_Home'"
+        }
+      ],
       staticStyle: {
-        background: "url(/img/khram/bg.png)",
-        "background-size": "cover",
-        "background-position": "50% 50%",
+        background: "url(/img/khram/bg.png) 50% 50% / cover",
         height: "100vh"
       }
-    },
-    [
-      _c(
-        "div",
-        { staticClass: "container" },
-        [
-          _c("HeaderVertical"),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            [
-              _c(
-                "keep-alive",
-                { attrs: { exclude: /khram_VideoalbumItem/ } },
-                [_c("router-view", { key: _vm.$route.path })],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ]
-  )
+    }),
+    _vm._v(" "),
+    _c("div", {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.$route.name !== "khram_Home",
+          expression: "$route.name !== 'khram_Home'"
+        }
+      ],
+      staticStyle: {
+        background: "url(/img/khram/bgp.png) 50% 50% / cover",
+        height: "100vh"
+      }
+    }),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container", staticStyle: { "margin-top": "-100vh" } },
+      [
+        _c("HeaderVertical"),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _c(
+              "keep-alive",
+              { attrs: { exclude: /khram_VideoalbumItem/ } },
+              [_c("router-view", { key: _vm.$route.path })],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38756,11 +38786,7 @@ var render = function() {
               {
                 key: type.id,
                 staticClass: "container",
-                staticStyle: {
-                  position: "relative",
-                  height: "100vh",
-                  background: "transparent"
-                }
+                staticStyle: { position: "relative", background: "transparent" }
               },
               [
                 _c(
@@ -38793,17 +38819,8 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "subback" },
+            { staticClass: "footer" },
             [
-              _c("router-link", { attrs: { to: { name: "khram_Home" } } }, [
-                _c(
-                  "i",
-                  { staticStyle: { "font-style": "normal", color: "#fff" } },
-                  [_vm._v("←")]
-                ),
-                _vm._v(" Главная\n        ")
-              ]),
-              _vm._v(" "),
               _vm.page.parent_id
                 ? [
                     _vm._l(_vm.pages, function(parent_page) {
@@ -38813,8 +38830,6 @@ var render = function() {
                               _c(
                                 "router-link",
                                 {
-                                  staticClass: "gal-button",
-                                  staticStyle: { "margin-left": "1vh" },
                                   attrs: {
                                     to: {
                                       name: "khram_PageItem",
@@ -38845,7 +38860,11 @@ var render = function() {
                       ]
                     })
                   ]
-                : _vm._e()
+                : _vm._e(),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: { name: "khram_Home" } } }, [
+                _c("img", { attrs: { src: "/img/khram/home.svg" } })
+              ])
             ],
             2
           )
@@ -39058,35 +39077,10 @@ var render = function() {
           "div",
           [
             _c("div", { staticClass: "subheader" }, [
-              _c(
-                "h1",
-                {
-                  staticClass: "h1-page mb-4",
-                  staticStyle: {
-                    "font-weight": "400",
-                    "text-transform": "uppercase",
-                    "font-size": "3.5vh",
-                    "text-align": "left",
-                    color: "#C0C2B7",
-                    margin: "0"
-                  }
-                },
-                [_vm._v(_vm._s(_vm.page.title))]
-              )
+              _c("h1", { staticClass: "h1-page" }, [
+                _vm._v(_vm._s(_vm.page.title))
+              ])
             ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "page-detail-text mb-0",
-                staticStyle: {
-                  height: "65vh",
-                  background: "white",
-                  padding: "4vh"
-                }
-              },
-              [_c("div", { domProps: { innerHTML: _vm._s(_vm.page.text) } })]
-            ),
             _vm._v(" "),
             _c(
               "swiper",
@@ -39126,6 +39120,19 @@ var render = function() {
                   : _vm._e()
               ],
               2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "page-detail-text mb-0",
+                staticStyle: {
+                  height: "47vh",
+                  padding: "0",
+                  "padding-right": "1vh"
+                }
+              },
+              [_c("div", { domProps: { innerHTML: _vm._s(_vm.page.text) } })]
             )
           ],
           1
@@ -39594,24 +39601,43 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "header" }, [
-    _c(
-      "div",
-      { staticClass: "header-logo" },
-      [
-        _c("router-link", { attrs: { to: { name: "khram_Home" } } }, [
-          _c("img", { attrs: { src: _vm.settings.logo } }),
-          _vm._v(" "),
-          _vm.settings.title
-            ? _c("span", {
-                domProps: {
-                  innerHTML: _vm._s(_vm.settings.title.replace("*", "<br>"))
-                }
-              })
-            : _vm._e()
-        ])
-      ],
-      1
-    )
+    _vm.$route.name === "khram_Home"
+      ? _c(
+          "div",
+          { staticClass: "header-logo" },
+          [
+            _c("router-link", { attrs: { to: { name: "khram_Home" } } }, [
+              _c("img", { attrs: { src: _vm.settings.logo } }),
+              _vm._v(" "),
+              _vm.settings.title
+                ? _c("span", {
+                    domProps: {
+                      innerHTML: _vm._s(_vm.settings.title.replace("*", "<br>"))
+                    }
+                  })
+                : _vm._e()
+            ])
+          ],
+          1
+        )
+      : _c(
+          "div",
+          { staticClass: "header-logo header-logo-mini" },
+          [
+            _c("router-link", { attrs: { to: { name: "khram_Home" } } }, [
+              _c("img", { attrs: { src: _vm.settings.logo } }),
+              _vm._v(" "),
+              _vm.settings.title
+                ? _c("span", {
+                    domProps: {
+                      innerHTML: _vm._s(_vm.settings.title.replace("*", "<br>"))
+                    }
+                  })
+                : _vm._e()
+            ])
+          ],
+          1
+        )
   ])
 }
 var staticRenderFns = []
