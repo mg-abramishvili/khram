@@ -21,7 +21,7 @@
                 <template v-for="parent_page in pages">
                     <template v-if="parent_page.id == page.parent_id">
                         <router-link :to="{name: 'khram_PageItem', params: {id: parent_page.id}}">
-                            <i style="font-style: normal; color: #fff">←</i> {{ parent_page.title }}
+                            <i style="font-style: normal; color: #fff"><img src="/img/khram/back.svg"></i>
                         </router-link>
                     </template>
                 </template>

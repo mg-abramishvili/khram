@@ -4,7 +4,7 @@
         <div v-if="page.children">
 
         <div class="subheader">
-            <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">{{ page.title }}</h1>
+            <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
         <swiper ref="PagesSwiper" :options="swiperOptions" class="PagesSwiper">
@@ -16,8 +16,8 @@
             </swiper-slide>
         </swiper>
 
-        <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 1.3vw"></div>
-        <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 1.3vw"></div>
+        <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: -4vw"></div>
+        <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: -4vw"></div>
         </div>
     </div>
 </template>
@@ -47,11 +47,13 @@
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
-                    if (json.children.length > 3) {
+                    if (json.children.length > 9) {
                         this.swiperOptions.centerInsufficientSlides = false,
+                        this.swiperOptions.allowTouchMove = true,
                         this.slider_prev_next = true
                     } else {
                         this.swiperOptions.centerInsufficientSlides = true,
+                        this.swiperOptions.allowTouchMove = false,
                         this.slider_prev_next = false
                     }
                 });
