@@ -136,7 +136,81 @@ class PageController extends Controller
         $data = request()->all();
         $pages = new Page();
         $pages->title = $data['title'];
+        
+        if (!isset($data['text'])) {
+            $data['text'] = null;
+        }
         $pages->text = $data['text'];
+
+        if (!isset($data['text2'])) {
+            $data['text2'] = null;
+        }
+        $pages->text2 = $data['text2'];
+
+        if (!isset($data['text3'])) {
+            $data['text3'] = null;
+        }
+        $pages->text3 = $data['text3'];
+
+        if (!isset($data['text4'])) {
+            $data['text4'] = null;
+        }
+        $pages->text4 = $data['text4'];
+
+        if (!isset($data['text5'])) {
+            $data['text5'] = null;
+        }
+        $pages->text5 = $data['text5'];
+
+        if (!isset($data['text6'])) {
+            $data['text6'] = null;
+        }
+        $pages->text6 = $data['text6'];
+
+        if (!isset($data['text7'])) {
+            $data['text7'] = null;
+        }
+        $pages->text7 = $data['text7'];
+
+        if (!isset($data['text8'])) {
+            $data['text8'] = null;
+        }
+        $pages->text8 = $data['text8'];
+
+        if (!isset($data['text9'])) {
+            $data['text9'] = null;
+        }
+        $pages->text9 = $data['text9'];
+
+        if (!isset($data['text10'])) {
+            $data['text10'] = null;
+        }
+        $pages->text10 = $data['text10'];
+
+        if (!isset($data['text11'])) {
+            $data['text11'] = null;
+        }
+        $pages->text11 = $data['text11'];
+
+        if (!isset($data['text12'])) {
+            $data['text12'] = null;
+        }
+        $pages->text12 = $data['text12'];
+
+        if (!isset($data['text13'])) {
+            $data['text13'] = null;
+        }
+        $pages->text13 = $data['text13'];
+
+        if (!isset($data['text14'])) {
+            $data['text14'] = null;
+        }
+        $pages->text14 = $data['text14'];
+
+        if (!isset($data['text15'])) {
+            $data['text15'] = null;
+        }
+        $pages->text15 = $data['text15'];
         
         if (!isset($data['image'])) {
             $data['image'] = null;
@@ -190,7 +264,81 @@ class PageController extends Controller
         $data = request()->all();
         $pages = Page::find($data['id']);
         $pages->title = $data['title'];
+
+        if (!isset($data['text'])) {
+            $data['text'] = null;
+        }
         $pages->text = $data['text'];
+
+        if (!isset($data['text2'])) {
+            $data['text2'] = null;
+        }
+        $pages->text2 = $data['text2'];
+
+        if (!isset($data['text3'])) {
+            $data['text3'] = null;
+        }
+        $pages->text3 = $data['text3'];
+
+        if (!isset($data['text4'])) {
+            $data['text4'] = null;
+        }
+        $pages->text4 = $data['text4'];
+
+        if (!isset($data['text5'])) {
+            $data['text5'] = null;
+        }
+        $pages->text5 = $data['text5'];
+
+        if (!isset($data['text6'])) {
+            $data['text6'] = null;
+        }
+        $pages->text6 = $data['text6'];
+
+        if (!isset($data['text7'])) {
+            $data['text7'] = null;
+        }
+        $pages->text7 = $data['text7'];
+
+        if (!isset($data['text8'])) {
+            $data['text8'] = null;
+        }
+        $pages->text8 = $data['text8'];
+
+        if (!isset($data['text9'])) {
+            $data['text9'] = null;
+        }
+        $pages->text9 = $data['text9'];
+
+        if (!isset($data['text10'])) {
+            $data['text10'] = null;
+        }
+        $pages->text10 = $data['text10'];
+
+        if (!isset($data['text11'])) {
+            $data['text11'] = null;
+        }
+        $pages->text11 = $data['text11'];
+
+        if (!isset($data['text12'])) {
+            $data['text12'] = null;
+        }
+        $pages->text12 = $data['text12'];
+
+        if (!isset($data['text13'])) {
+            $data['text13'] = null;
+        }
+        $pages->text13 = $data['text13'];
+
+        if (!isset($data['text14'])) {
+            $data['text14'] = null;
+        }
+        $pages->text14 = $data['text14'];
+
+        if (!isset($data['text15'])) {
+            $data['text15'] = null;
+        }
+        $pages->text15 = $data['text15'];
 
         if (!isset($data['image'])) {
             $data['image'] = null;

@@ -156,7 +156,106 @@
                     Текст
                 </dt>
                 <dd class="col-sm-9">
-                    <textarea rows="7" type="text" class="form-control" id="text" name="text">.</textarea>
+                    <textarea rows="7" type="text" class="form-control" id="text" name="text"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 2
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text2" name="text2"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 3
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text3" name="text3"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 4
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text4" name="text4"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 5
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text5" name="text5"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 6
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text6" name="text6"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 7
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text7" name="text7"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 8
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text8" name="text8"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 9
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text9" name="text9"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 10
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text10" name="text10"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 11
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text11" name="text11"></textarea>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-2">
+                <dt class="col-sm-3">
+                    Текст 12
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text12" name="text12"></textarea>
                 </dd>
             </div>
 
@@ -564,6 +663,29 @@
                     },
                 }
             });
+
+            $('textarea[id="text2"]').summernote({
+                height: 300,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['height', ['height']],
+                    ['insert', ['picture']],
+                    ['view', ['fullscreen', 'codeview']],
+                ],
+                callbacks: {
+                    onImageUpload: function(images) {
+                        for (var i = 0; i < images.length; i++) {
+                            uploadImage(images[i], this);
+                        }
+                    },
+                }
+            });
+
             function uploadImage(image, textarea) {
                 var data = new FormData();
                 data.append('image', image);

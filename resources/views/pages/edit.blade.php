@@ -159,6 +159,18 @@
                 </dd>
             </div>
 
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 2
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text2" name="text2">{{$page->text2}}</textarea>
+                    @error('text2')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
             <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-6 type-7 type-9 type-10">
                 <dt class="col-sm-3">
                     Картинка
@@ -625,6 +637,29 @@
                 },
             }
         });
+
+        $('textarea[id="text2"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
         function uploadImage(image, textarea) {
             var data = new FormData();
             data.append('image', image);
