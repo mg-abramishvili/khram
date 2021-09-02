@@ -334,6 +334,8 @@ border-color: #777777 transparent transparent transparent;
 
 .type-2 {
     padding: 0;
+    margin-left: -2.5vh;
+    width: calc(100% + 5vh);
 }
 
 .type-2 .page-detail-text {
@@ -350,6 +352,35 @@ border-color: #777777 transparent transparent transparent;
     background-size: cover;
     background-position: 50% 50%;
     margin: 0 4vh;
+}
+
+.type-2 p {
+    margin: 0 !important;
+    margin-bottom: 2vh !important;
+    padding: 0 4vh !important;
+}
+
+.type2slider-item {
+    font-size: 1.75vh !important;
+    line-height: 1.3 !important;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.type2slider-item-inner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+
+.type2slider-item img {
+    display: block;
+    margin: 0 auto;
+    max-width: 85vw !important;
+    max-height: 80vh !important;
 }
 
 .type-3 {
