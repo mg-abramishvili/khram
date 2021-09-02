@@ -374,6 +374,8 @@ border-color: #777777 transparent transparent transparent;
     transform: translateY(-50%);
     left: 0;
     right: 0;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .type2slider-item img {

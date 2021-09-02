@@ -171,6 +171,102 @@
                 </dd>
             </div>
 
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 3
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text3" name="text3">{{$page->text3}}</textarea>
+                    @error('text3')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 4
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text4" name="text4">{{$page->text4}}</textarea>
+                    @error('text4')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 5
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text5" name="text5">{{$page->text5}}</textarea>
+                    @error('text5')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 6
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text6" name="text6">{{$page->text6}}</textarea>
+                    @error('text6')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 7
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text7" name="text7">{{$page->text7}}</textarea>
+                    @error('text7')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 8
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text8" name="text8">{{$page->text8}}</textarea>
+                    @error('text8')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 9
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text9" name="text9">{{$page->text9}}</textarea>
+                    @error('text9')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-2">
+                <dt class="col-sm-3">
+                    Текст 10
+                </dt>
+                <dd class="col-sm-9">
+                    <textarea rows="7" type="text" class="form-control" id="text10" name="text10">{{$page->text10}}</textarea>
+                    @error('text10')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </dd>
+            </div>
+
             <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-6 type-7 type-9 type-10">
                 <dt class="col-sm-3">
                     Картинка
@@ -639,6 +735,182 @@
         });
 
         $('textarea[id="text2"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text3"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text4"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text5"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text6"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text7"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text8"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text9"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+
+        $('textarea[id="text10"]').summernote({
             height: 300,
             toolbar: [
                 ['style', ['bold', 'italic', 'underline', 'clear']],
