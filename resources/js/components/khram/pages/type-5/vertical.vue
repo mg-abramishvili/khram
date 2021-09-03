@@ -5,7 +5,7 @@
         </div>
 
         <div class="videoalbum-detail" style="margin-top: 4vh">
-            <video :src="page.video" id="videoElement" @playing="played" autoplay controls disablePictureInPicture controlsList="nodownload" style="width: auto; height: auto; max-width: 100%; max-height: 80vh; margin: 0 auto;"></video>
+            <video :src="page.video" id="videoElement" @playing="played" autoplay controls disablePictureInPicture controlsList="nodownload" style="width: 100%; height: auto; max-width: 100%; max-height: 80vh; margin: 0 auto;"></video>
         </div>
     </div>
 </template>

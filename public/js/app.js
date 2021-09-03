@@ -39406,7 +39406,7 @@ var render = function() {
       [
         _c("video", {
           staticStyle: {
-            width: "auto",
+            width: "100%",
             height: "auto",
             "max-width": "100%",
             "max-height": "80vh",
