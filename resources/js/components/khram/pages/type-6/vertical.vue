@@ -9,7 +9,7 @@
 
         <swiper ref="PagesSwiper" :options="swiperOptions" class="PagesSwiper">
             <swiper-slide v-for="child in page.children" :key="child.id" class="t6-button">
-                <div @click="GoToPage(child.id)" class="t6-button_inner" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }">
+                <div @click="GoToPage(child.id, child.types)" class="t6-button_inner" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }">
                     <div v-if="child.image_as_icon === '1'" class="t6-button_image" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }"></div>
                     <span><i>{{ child.title }}</i></span>
                 </div>
@@ -59,9 +59,13 @@
                 });
         },
         methods: {
-            GoToPage(id) {
+            GoToPage(id, types) {
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
                 this.$refs.PagesSwiper.$swiper.slideTo(1, false)
+
+                if(types[0].id === 5) {
+                    this.$parent.$parent.reset_video = true
+                }
             },
         },
         computed: {

@@ -3320,6 +3320,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3439,7 +3440,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    GoToPage: function GoToPage(id) {
+    GoToPage: function GoToPage(id, types) {
       this.$router.push({
         name: 'khram_PageItem',
         params: {
@@ -3447,6 +3448,10 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
       this.$refs.PagesSwiper.$swiper.slideTo(1, false);
+
+      if (types[0].id === 5) {
+        this.$parent.$parent.reset_video = true;
+      }
     }
   },
   computed: {
@@ -39389,21 +39394,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "type-5" }, [
     _c("div", { staticClass: "subheader" }, [
-      _c(
-        "h1",
-        {
-          staticClass: "h1-page mb-4",
-          staticStyle: {
-            "font-weight": "400",
-            "text-transform": "uppercase",
-            "font-size": "3.5vh",
-            "text-align": "left",
-            color: "#C0C2B7",
-            margin: "0"
-          }
-        },
-        [_vm._v(_vm._s(_vm.page.title))]
-      )
+      _c("h1", { staticClass: "h1-page" }, [_vm._v(_vm._s(_vm.page.title))])
     ]),
     _vm._v(" "),
     _c(
@@ -39414,6 +39405,13 @@ var render = function() {
       },
       [
         _c("video", {
+          staticStyle: {
+            width: "auto",
+            height: "auto",
+            "max-width": "100%",
+            "max-height": "80vh",
+            margin: "0 auto"
+          },
           attrs: {
             src: _vm.page.video,
             id: "videoElement",
@@ -39482,7 +39480,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
-                            return _vm.GoToPage(child.id)
+                            return _vm.GoToPage(child.id, child.types)
                           }
                         }
                       },

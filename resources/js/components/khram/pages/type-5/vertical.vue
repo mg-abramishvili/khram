@@ -1,10 +1,11 @@
 <template>
     <div class="type-5">
         <div class="subheader">
-                    <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">{{ page.title }}</h1>
-                </div>
+            <h1 class="h1-page">{{ page.title }}</h1>
+        </div>
+
         <div class="videoalbum-detail" style="margin-top: 4vh">
-            <video :src="page.video" id="videoElement" @playing="played" autoplay controls disablePictureInPicture controlsList="nodownload"></video>
+            <video :src="page.video" id="videoElement" @playing="played" autoplay controls disablePictureInPicture controlsList="nodownload" style="width: auto; height: auto; max-width: 100%; max-height: 80vh; margin: 0 auto;"></video>
         </div>
     </div>
 </template>
