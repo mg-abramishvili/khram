@@ -339,7 +339,23 @@ border-color: #777777 transparent transparent transparent;
 .type-1 .page-detail-text {
     height: 51vh;
     font-size: 1.5vh !important;
-    padding: 4vh;
+    padding: 0vh;
+}
+
+.type-1 .table-bordered td,
+.type-1  .table-bordered th {
+    border: 0.2vh solid #1d5ea0;
+    font-size: 1.75vh !important;
+}
+
+.type-1 .table-bordered td span,
+.type-1  .table-bordered th span {
+    font-size: 1.75vh !important;
+}
+
+.type-1  .table td,
+.type-1 .table th {
+    vertical-align: middle;
 }
 
 .type-2 {
