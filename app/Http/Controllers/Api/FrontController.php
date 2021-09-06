@@ -83,7 +83,7 @@ class FrontController extends Controller
 
     public function banners()
     {
-        return Banner::orderBy('created_at', 'desc')->get();
+        return Banner::all();
     }
 	
 	public function schemes()

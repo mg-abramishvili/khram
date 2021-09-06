@@ -288,7 +288,7 @@ border-color: #777777 transparent transparent transparent;
     justify-content: center;
     align-items: center;
     width: 80vw;
-    height: 60vh;
+    height: 80vh;
     margin: 0;
     opacity: 1;
 }
@@ -297,7 +297,7 @@ border-color: #777777 transparent transparent transparent;
     width: auto;
     height: auto;
     max-width: 80vw;
-    max-height: 60vh;
+    max-height: 80vh;
     transform: none;
 }
 

@@ -80,24 +80,79 @@
                 .then(response => response.json())
                 .then(json => {
                     this.pages = json;
+                    setTimeout(() => {
+                    var swprs = document.querySelectorAll('.Page3Swiper');
+                        [].forEach.call(swprs, function(swpr) {
+                            const swiper = document.querySelector('.Page3Swiper').swiper;
+                            swiper.autoplay.start();
+                            //console.log(swiper)
+                        });
+                    }, 3000);
                 });
+
+            
         },
         methods: {
             GoBack(id) {
-                var swprs = document.querySelectorAll('[class^="swiper-container"]');
-                [].forEach.call(swprs, function(swpr) {
-                    const swiper = document.querySelector('.swiper-container').swiper;
-                    swiper.slideTo(0,false);
+                // page 2 slider goto0
+                var swprs_p2 = document.querySelectorAll('.Page2Swiper');
+                [].forEach.call(swprs_p2, function(swpr_p2) {
+                    const swiper_p2 = document.querySelector('.Page2Swiper').swiper;
+                    swiper_p2.slideTo(0, false)
                 });
+
+                // page 3 slider sleep
+                var swprs_p3 = document.querySelectorAll('.Page3Swiper');
+                [].forEach.call(swprs_p3, function(swpr_p3) {
+                    const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
+                    swiper_p3.slideTo(0, false)
+                    swiper_p3.autoplay.stop()
+                });
+
+                // page 4 slider goto0
+                var swprs_p4 = document.querySelectorAll('.Page4Swiper');
+                [].forEach.call(swprs_p4, function(swpr_p4) {
+                    const swiper_p4 = document.querySelector('.Page4Swiper').swiper;
+                    swiper_p4.slideTo(0, false)
+                });
+
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
             },
             GoHome() {
-                var swprs = document.querySelectorAll('[class^="swiper-container"]');
-                [].forEach.call(swprs, function(swpr) {
-                    const swiper = document.querySelector('.swiper-container').swiper;
-                    swiper.slideTo(0,false);
-                });
                 this.$router.push({name: 'khram_Home'})
+
+                // page 2 slider goto0
+                var swprs_p2 = document.querySelectorAll('.Page2Swiper');
+                [].forEach.call(swprs_p2, function(swpr_p2) {
+                    const swiper_p2 = document.querySelector('.Page2Swiper').swiper;
+                    swiper_p2.slideTo(0, false)
+                });
+
+                // page 3 slider sleep
+                var swprs_p3 = document.querySelectorAll('.Page3Swiper');
+                [].forEach.call(swprs_p3, function(swpr_p3) {
+                    const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
+                    swiper_p3.slideTo(0, false)
+                    swiper_p3.autoplay.stop()
+                });
+
+                // page 4 slider goto0
+                var swprs_p4 = document.querySelectorAll('.Page4Swiper');
+                [].forEach.call(swprs_p4, function(swpr_p4) {
+                    const swiper_p4 = document.querySelector('.Page4Swiper').swiper;
+                    swiper_p4.slideTo(0, false)
+                });
+
+                // index slider awake
+                setTimeout(() => {
+                    var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
+                    [].forEach.call(swprs_index, function(swpr_index) {
+                        const swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
+                        swiper_index.autoplay.run();
+                        //console.log(swiper)
+                    });
+                }, 3000);
+                
             },
         },
         components: {

@@ -1,10 +1,8 @@
 <template>
     <div style="width: 100%;">
         <div class="banner">
-            <swiper ref="IndexBannerSwiper" :options="swiperOptions">
+            <swiper ref="IndexBannerSwiper" :options="swiperIndexOptions" class="IndexBannerSwiper">
                 <swiper-slide v-for="banner in banners" :key="'banner' + banner.id" class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></swiper-slide>
-                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
             </swiper>
         </div>
 
@@ -86,16 +84,13 @@
                 schemes: [],
                 banners: [],
                 photoalbum_last: {},
-                swiperOptions: {
+                swiperIndexOptions: {
                     slidesPerView: 1,
                     speed: 800,
+                    loop: true,
                     autoplay: {
                         delay: 3500,
                         disableOnInteraction: false,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
                     },
                 },
                 slider_prev_next: false,
@@ -138,8 +133,27 @@
         },
         methods: {
             GoToPage(id, types) {
+                //index slider sleep
+                var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
+                [].forEach.call(swprs_index, function(swpr_index) {
+                    const swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
+                    swiper_index.slideTo(0, false)
+                    swiper_index.autoplay.stop()
+                });
+
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
-                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
+                //this.$refs.IndexBannerSwiper.$swiper.slideTo(0, false)
+
+                if(types[0].id === 3) {
+                    setTimeout(() => {
+                        var swprs_p3 = document.querySelectorAll('.Page3Swiper');
+                        [].forEach.call(swprs_p3, function(swpr_p3) {
+                            const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
+                            swiper_p3.autoplay.run()
+                            console.log(swiper_p3)
+                        });
+                    }, 3000);
+                }
 
                 if(types[0].id === 5) {
                     this.$parent.reset_video = true
@@ -173,11 +187,6 @@
                     this.slider_prev_next = false
                 }
             },
-        },
-        computed: {
-            swiper() {
-                return this.$refs.IndexBannerSwiper.$swiper
-            }
         },
         components: {
             Swiper,

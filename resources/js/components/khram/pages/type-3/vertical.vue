@@ -6,12 +6,12 @@
                 <h1 class="h1-page">{{ page.title }}</h1>
             </div>
 
-            <swiper ref="PageSwiper" :options="swiperOptions" class="PageSwiper">
+            <swiper ref="Page3Swiper" :options="swiperPage3Options" class="Page3Swiper">
                 <swiper-slide v-for="pic in page.gallery" :key="pic" class="type3slider">
                     <div class="type3slider-item" v-bind:style="{ 'background-image': 'url(' + pic + ')' }"></div>
                 </swiper-slide>
-                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
+                <!--<div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
+                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>-->
                 
             </swiper>
 
@@ -32,14 +32,14 @@
         data() {
             return {
                 page: [],
-                swiperOptions: {
+                swiperPage3Options: {
                     slidesPerView: 1,
                     speed: 800,
+                    loop: false,
                     autoplay: {
                         delay: 3500,
                         disableOnInteraction: false,
                     },
-                    //simulateTouch: false,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
@@ -54,18 +54,15 @@
                 .then(json => {
                     this.page = json;
                     if (json.gallery.length > 1) {
-                        this.swiperOptions.loop = true
+                        this.swiperPage3Options.loop = true
+                        this.swiperPage3Options.allowTouchMove = true
                         this.slider_prev_next = true
                     } else {
-                        this.swiperOptions.loop = false
+                        this.swiperPage3Options.loop = false
+                        this.swiperPage3Options.allowTouchMove = false
                         this.slider_prev_next = false
                     }
                 });
-        },
-        computed: {
-            swiper() {
-                return this.$refs.PageSwiper.$swiper
-            }
         },
         components: {
             Swiper,

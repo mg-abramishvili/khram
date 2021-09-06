@@ -7,7 +7,7 @@
             <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
-        <swiper ref="PagesSwiper" :options="swiperOptions" class="PagesSwiper">
+        <swiper ref="Page6Swiper" :options="swiperPage6Options" class="Page6Swiper">
             <swiper-slide v-for="child in page.children" :key="child.id" class="t6-button">
                 <div @click="GoToPage(child.id, child.types)" class="t6-button_inner" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }">
                     <div v-if="child.image_as_icon === '1'" class="t6-button_image" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }"></div>
@@ -30,7 +30,7 @@
         data() {
             return {
                 page: [],
-                swiperOptions: {
+                swiperPage6Options: {
                     slidesPerView: 3,
                     slidesPerColumn: 3,
                     slidesPerGroup: 3,
@@ -49,12 +49,12 @@
                 .then(json => {
                     this.page = json;
                     if (json.children.length > 9) {
-                        this.swiperOptions.centerInsufficientSlides = false,
-                        this.swiperOptions.allowTouchMove = true,
+                        this.swiperPage6Options.centerInsufficientSlides = false,
+                        this.swiperPage6Options.allowTouchMove = true,
                         this.slider_prev_next = true
                     } else {
-                        this.swiperOptions.centerInsufficientSlides = true,
-                        this.swiperOptions.allowTouchMove = false,
+                        this.swiperPage6Options.centerInsufficientSlides = true,
+                        this.swiperPage6Options.allowTouchMove = false,
                         this.slider_prev_next = false
                     }
                 });
@@ -62,17 +62,23 @@
         methods: {
             GoToPage(id, types) {
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
-                this.$refs.PagesSwiper.$swiper.slideTo(1, false)
+                this.$refs.Page6Swiper.$swiper.slideTo(0, false)
+
+                if(types[0].id === 3) {
+                    setTimeout(() => {
+                        var swprs_p3 = document.querySelectorAll('.Page3Swiper');
+                        [].forEach.call(swprs_p3, function(swpr_p3) {
+                            const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
+                            swiper_p3.autoplay.run()
+                            console.log(swiper_p3)
+                        });
+                    }, 3000);
+                }
 
                 if(types[0].id === 5) {
                     this.$parent.$parent.reset_video = true
                 }
             },
-        },
-        computed: {
-            swiper() {
-                return this.$refs.PagesSwiper.$swiper
-            }
         },
         components: {
             Swiper,

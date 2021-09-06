@@ -4,7 +4,7 @@
             <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
-        <swiper ref="PageSwiper" :options="swiperOptions" class="PageSwiper">
+        <swiper ref="Page2Swiper" :options="swiperPage2Options" class="Page2Swiper">
 
             <swiper-slide v-if="page.text && page.text.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
@@ -81,7 +81,7 @@
         data() {
             return {
                 page: {},
-                swiperOptions: {
+                swiperPage2Options: {
                     slidesPerView: 1,
                     //simulateTouch: false,
                     navigation: {
@@ -98,16 +98,11 @@
                 .then(json => {
                     this.page = json;
                     if (json.gallery.length > 3) {
-                        this.swiperOptions.centerInsufficientSlides = false
+                        this.swiperPage2Options.centerInsufficientSlides = false
                     } else {
-                        this.swiperOptions.centerInsufficientSlides = true
+                        this.swiperPage2Options.centerInsufficientSlides = true
                     }
                 });
-        },
-        computed: {
-            swiper() {
-                return this.$refs.PageSwiper.$swiper
-            }
         },
         components: {
             Swiper,
