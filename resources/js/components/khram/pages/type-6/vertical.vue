@@ -33,6 +33,7 @@
                 swiperOptions: {
                     slidesPerView: 3,
                     slidesPerColumn: 3,
+                    slidesPerGroup: 3,
                     slidesPerColumnFill: 'row',
                     navigation: {
                         nextEl: '.swiper-button-next',

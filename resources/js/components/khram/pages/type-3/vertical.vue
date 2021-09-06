@@ -34,6 +34,11 @@
                 page: [],
                 swiperOptions: {
                     slidesPerView: 1,
+                    speed: 800,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    },
                     //simulateTouch: false,
                     navigation: {
                         nextEl: '.swiper-button-next',
@@ -48,10 +53,12 @@
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
-                    if (json.gallery.length > 3) {
-                        this.swiperOptions.centerInsufficientSlides = false
+                    if (json.gallery.length > 1) {
+                        this.swiperOptions.loop = true
+                        this.slider_prev_next = true
                     } else {
-                        this.swiperOptions.centerInsufficientSlides = true
+                        this.swiperOptions.loop = false
+                        this.slider_prev_next = false
                     }
                 });
         },

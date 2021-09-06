@@ -20,16 +20,16 @@
             <template v-if="page.parent_id">
                 <template v-for="parent_page in pages">
                     <template v-if="parent_page.id == page.parent_id">
-                        <router-link :to="{name: 'khram_PageItem', params: {id: parent_page.id}}">
+                        <a @click="GoBack(parent_page.id)">
                             <i style="font-style: normal; color: #fff"><img src="/img/khram/back.svg"></i>
-                        </router-link>
+                        </a>
                     </template>
                 </template>
             </template>
 
-            <router-link :to="{name: 'khram_Home'}">
+            <a @click="GoHome()">
                 <img src="/img/khram/home.svg">
-            </router-link>
+            </a>
         </div>
         
 
@@ -46,6 +46,9 @@
     import KhramPageType7Vertical from '../pages/type-7/vertical'
     import KhramPageType9Vertical from '../pages/type-9/vertical'
     import KhramPageType10Vertical from '../pages/type-10/vertical'
+
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
 
     export default {
         data() {
@@ -78,6 +81,24 @@
                 .then(json => {
                     this.pages = json;
                 });
+        },
+        methods: {
+            GoBack(id) {
+                var swprs = document.querySelectorAll('[class^="swiper-container"]');
+                [].forEach.call(swprs, function(swpr) {
+                    const swiper = document.querySelector('.swiper-container').swiper;
+                    swiper.slideTo(0,false);
+                });
+                this.$router.push({name: 'khram_PageItem', params: {id: id}})
+            },
+            GoHome() {
+                var swprs = document.querySelectorAll('[class^="swiper-container"]');
+                [].forEach.call(swprs, function(swpr) {
+                    const swiper = document.querySelector('.swiper-container').swiper;
+                    swiper.slideTo(0,false);
+                });
+                this.$router.push({name: 'khram_Home'})
+            },
         },
         components: {
             KhramPageType1Vertical,

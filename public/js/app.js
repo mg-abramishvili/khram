@@ -2831,6 +2831,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_type_7_vertical__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/type-7/vertical */ "./resources/js/components/khram/pages/type-7/vertical.vue");
 /* harmony import */ var _pages_type_9_vertical__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/type-9/vertical */ "./resources/js/components/khram/pages/type-9/vertical.vue");
 /* harmony import */ var _pages_type_10_vertical__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/type-10/vertical */ "./resources/js/components/khram/pages/type-10/vertical.vue");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_10__);
 //
 //
 //
@@ -2869,6 +2873,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 
 
 
@@ -2912,6 +2918,31 @@ __webpack_require__.r(__webpack_exports__);
     }).then(function (json) {
       _this.pages = json;
     });
+  },
+  methods: {
+    GoBack: function GoBack(id) {
+      var swprs = document.querySelectorAll('[class^="swiper-container"]');
+      [].forEach.call(swprs, function (swpr) {
+        var swiper = document.querySelector('.swiper-container').swiper;
+        swiper.slideTo(0, false);
+      });
+      this.$router.push({
+        name: 'khram_PageItem',
+        params: {
+          id: id
+        }
+      });
+    },
+    GoHome: function GoHome() {
+      var swprs = document.querySelectorAll('[class^="swiper-container"]');
+      [].forEach.call(swprs, function (swpr) {
+        var swiper = document.querySelector('.swiper-container').swiper;
+        swiper.slideTo(0, false);
+      });
+      this.$router.push({
+        name: 'khram_Home'
+      });
+    }
   },
   components: {
     KhramPageType1Vertical: _pages_type_1_vertical__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -3195,6 +3226,11 @@ __webpack_require__.r(__webpack_exports__);
       page: [],
       swiperOptions: {
         slidesPerView: 1,
+        speed: 800,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false
+        },
         //simulateTouch: false,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -3212,10 +3248,12 @@ __webpack_require__.r(__webpack_exports__);
     }).then(function (json) {
       _this.page = json;
 
-      if (json.gallery.length > 3) {
-        _this.swiperOptions.centerInsufficientSlides = false;
+      if (json.gallery.length > 1) {
+        _this.swiperOptions.loop = true;
+        _this.slider_prev_next = true;
       } else {
-        _this.swiperOptions.centerInsufficientSlides = true;
+        _this.swiperOptions.loop = false;
+        _this.slider_prev_next = false;
       }
     });
   },
@@ -3415,6 +3453,7 @@ __webpack_require__.r(__webpack_exports__);
       swiperOptions: {
         slidesPerView: 3,
         slidesPerColumn: 3,
+        slidesPerGroup: 3,
         slidesPerColumnFill: 'row',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -38909,31 +38948,15 @@ var render = function() {
                         parent_page.id == _vm.page.parent_id
                           ? [
                               _c(
-                                "router-link",
+                                "a",
                                 {
-                                  attrs: {
-                                    to: {
-                                      name: "khram_PageItem",
-                                      params: { id: parent_page.id }
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.GoBack(parent_page.id)
                                     }
                                   }
                                 },
-                                [
-                                  _c(
-                                    "i",
-                                    {
-                                      staticStyle: {
-                                        "font-style": "normal",
-                                        color: "#fff"
-                                      }
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: { src: "/img/khram/back.svg" }
-                                      })
-                                    ]
-                                  )
-                                ]
+                                [_vm._m(0, true)]
                               )
                             ]
                           : _vm._e()
@@ -38942,9 +38965,17 @@ var render = function() {
                   ]
                 : _vm._e(),
               _vm._v(" "),
-              _c("router-link", { attrs: { to: { name: "khram_Home" } } }, [
-                _c("img", { attrs: { src: "/img/khram/home.svg" } })
-              ])
+              _c(
+                "a",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.GoHome()
+                    }
+                  }
+                },
+                [_c("img", { attrs: { src: "/img/khram/home.svg" } })]
+              )
             ],
             2
           )
@@ -38953,7 +38984,16 @@ var render = function() {
       )
     : _vm._e()
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("i", { staticStyle: { "font-style": "normal", color: "#fff" } }, [
+      _c("img", { attrs: { src: "/img/khram/back.svg" } })
+    ])
+  }
+]
 render._withStripped = true
 
 
