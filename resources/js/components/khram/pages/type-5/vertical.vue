@@ -4,8 +4,8 @@
             <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
-        <div class="videoalbum-detail" style="margin-top: 4vh">
-            <video :src="page.video" id="videoElement" @playing="played" autoplay controls disablePictureInPicture controlsList="nodownload" style="width: 100%; height: auto; max-width: 100%; max-height: 80vh; margin: 0 auto;"></video>
+        <div class="videoalbum-detail" style="height: 80vh; position: relative;">
+            <video :src="page.video" id="videoElement" @playing="played" autoplay controls disablePictureInPicture controlsList="nodownload" style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: auto; max-width: 100%; max-height: 80vh; margin-top: -5vh; border-radius: 0.5vh;"></video>
         </div>
     </div>
 </template>

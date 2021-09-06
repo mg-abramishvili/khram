@@ -39441,16 +39441,20 @@ var render = function() {
       "div",
       {
         staticClass: "videoalbum-detail",
-        staticStyle: { "margin-top": "4vh" }
+        staticStyle: { height: "80vh", position: "relative" }
       },
       [
         _c("video", {
           staticStyle: {
+            position: "absolute",
+            top: "50%",
+            transform: "translateY(-50%)",
             width: "100%",
             height: "auto",
             "max-width": "100%",
             "max-height": "80vh",
-            margin: "0 auto"
+            "margin-top": "-5vh",
+            "border-radius": "0.5vh"
           },
           attrs: {
             src: _vm.page.video,
