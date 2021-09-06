@@ -2514,7 +2514,8 @@ __webpack_require__.r(__webpack_exports__);
           var swprs_p3 = document.querySelectorAll('.Page3Swiper');
           [].forEach.call(swprs_p3, function (swpr_p3) {
             var swiper_p3 = document.querySelector('.Page3Swiper').swiper;
-            swiper_p3.autoplay.run(); //console.log(swiper_p3)
+            swiper_p3.autoplay.start();
+            swiper_p3.slideNext(500, true); //console.log(swiper_p3)
           });
         }, 3000);
       }
@@ -2925,13 +2926,6 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (json) {
       _this.pages = json;
-      setTimeout(function () {
-        var swprs = document.querySelectorAll('.Page3Swiper');
-        [].forEach.call(swprs, function (swpr) {
-          var swiper = document.querySelector('.Page3Swiper').swiper;
-          swiper.autoplay.start(); //console.log(swiper)
-        });
-      }, 3000);
     });
   },
   methods: {
@@ -2990,7 +2984,8 @@ __webpack_require__.r(__webpack_exports__);
         var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
         [].forEach.call(swprs_index, function (swpr_index) {
           var swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
-          swiper_index.autoplay.run(); //console.log(swiper_index)
+          swiper_index.autoplay.start();
+          console.log(swiper_index);
         });
       }, 3000);
     }
@@ -3276,7 +3271,8 @@ __webpack_require__.r(__webpack_exports__);
         loop: false,
         autoplay: {
           delay: 3500,
-          disableOnInteraction: false
+          disableOnInteraction: false,
+          waitForTransition: false
         },
         navigation: {
           nextEl: '.swiper-button-next',
@@ -3532,8 +3528,8 @@ __webpack_require__.r(__webpack_exports__);
           var swprs_p3 = document.querySelectorAll('.Page3Swiper');
           [].forEach.call(swprs_p3, function (swpr_p3) {
             var swiper_p3 = document.querySelector('.Page3Swiper').swiper;
-            swiper_p3.autoplay.run();
-            console.log(swiper_p3);
+            swiper_p3.autoplay.start();
+            swiper_p3.slideNext(500, true); //console.log(swiper_p3)
           });
         }, 3000);
       }

@@ -150,7 +150,8 @@
                         var swprs_p3 = document.querySelectorAll('.Page3Swiper');
                         [].forEach.call(swprs_p3, function(swpr_p3) {
                             const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
-                            swiper_p3.autoplay.run()
+                            swiper_p3.autoplay.start()
+                            swiper_p3.slideNext(500, true)
                             //console.log(swiper_p3)
                         });
                     }, 3000);

@@ -39,6 +39,7 @@
                     autoplay: {
                         delay: 3500,
                         disableOnInteraction: false,
+                        waitForTransition: false,
                     },
                     navigation: {
                         nextEl: '.swiper-button-next',
