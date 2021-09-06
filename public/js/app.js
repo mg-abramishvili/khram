@@ -2450,7 +2450,8 @@ __webpack_require__.r(__webpack_exports__);
         loop: true,
         autoplay: {
           delay: 3500,
-          disableOnInteraction: false
+          disableOnInteraction: false,
+          waitForTransition: false
         }
       },
       slider_prev_next: false
@@ -2495,12 +2496,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     GoToPage: function GoToPage(id, types) {
-      //index slider sleep
       var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
       [].forEach.call(swprs_index, function (swpr_index) {
         var swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
         swiper_index.slideTo(0, false);
-        swiper_index.autoplay.stop();
+        swiper_index.autoplay.stop(); //console.log(swiper_index)
       });
       this.$router.push({
         name: 'khram_PageItem',
@@ -2514,8 +2514,7 @@ __webpack_require__.r(__webpack_exports__);
           var swprs_p3 = document.querySelectorAll('.Page3Swiper');
           [].forEach.call(swprs_p3, function (swpr_p3) {
             var swiper_p3 = document.querySelector('.Page3Swiper').swiper;
-            swiper_p3.autoplay.run();
-            console.log(swiper_p3);
+            swiper_p3.autoplay.run(); //console.log(swiper_p3)
           });
         }, 3000);
       }
@@ -2991,7 +2990,7 @@ __webpack_require__.r(__webpack_exports__);
         var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
         [].forEach.call(swprs_index, function (swpr_index) {
           var swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
-          swiper_index.autoplay.run(); //console.log(swiper)
+          swiper_index.autoplay.run(); //console.log(swiper_index)
         });
       }, 3000);
     }

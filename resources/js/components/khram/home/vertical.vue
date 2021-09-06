@@ -91,6 +91,7 @@
                     autoplay: {
                         delay: 3500,
                         disableOnInteraction: false,
+                        waitForTransition: false,
                     },
                 },
                 slider_prev_next: false,
@@ -133,12 +134,12 @@
         },
         methods: {
             GoToPage(id, types) {
-                //index slider sleep
                 var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
                 [].forEach.call(swprs_index, function(swpr_index) {
                     const swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
                     swiper_index.slideTo(0, false)
                     swiper_index.autoplay.stop()
+                    //console.log(swiper_index)
                 });
 
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
@@ -150,7 +151,7 @@
                         [].forEach.call(swprs_p3, function(swpr_p3) {
                             const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
                             swiper_p3.autoplay.run()
-                            console.log(swiper_p3)
+                            //console.log(swiper_p3)
                         });
                     }, 3000);
                 }

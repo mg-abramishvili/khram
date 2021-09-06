@@ -148,8 +148,8 @@
                     var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
                     [].forEach.call(swprs_index, function(swpr_index) {
                         const swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
-                        swiper_index.autoplay.run();
-                        //console.log(swiper)
+                        swiper_index.autoplay.run()
+                        //console.log(swiper_index)
                     });
                 }, 3000);
                 
