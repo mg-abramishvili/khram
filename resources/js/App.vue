@@ -48,7 +48,7 @@
             document.addEventListener('keydown', this._keyListener.bind(this));
         },
         beforeMount() {
-            document.oncontextmenu = new Function("return false;");
+            //document.oncontextmenu = new Function("return false;");
         },
         components: {
             ActivationPanel,

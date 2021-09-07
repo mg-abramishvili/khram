@@ -25,6 +25,7 @@
                 settings: {},
                 reset_routes: true,
                 reset_video: true,
+                reset_hooper: false,
             }
         },
         created() {

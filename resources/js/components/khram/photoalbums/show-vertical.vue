@@ -7,13 +7,11 @@
             </div>
 
             <div v-if="photoalbumItem" class="gallery-detail">
-                <swiper ref="PhotoalbumsItemSwiper" :options="swiperOptions">
-                    <swiper-slide v-for="photoalbumPic in photoalbumItem.gallery" :key="photoalbumPic" class="gallery-detail-item">
+                <hooper :settings="photoalbumItemHooper">
+                    <slide v-for="photoalbumPic in photoalbumItem.gallery" :key="photoalbumPic" class="gallery-detail-item">
                         <img :src="photoalbumPic">
-                    </swiper-slide>
-                    <div class="swiper-button-prev" slot="button-prev"></div>
-                    <div class="swiper-button-next" slot="button-next"></div>
-                </swiper>
+                    </slide>
+                </hooper>
             </div>
         </div>
 
@@ -30,20 +28,17 @@
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    import { Hooper, Slide } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
         data() {
             return {
                 photoalbumItem: {},
-                swiperOptions: {
-                    slidesPerView: 1,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                }
+                photoalbumItemHooper: {
+                    itemsToShow: 1,
+                    centerMode: true,
+                },
             }
         },
         created() {
@@ -53,14 +48,9 @@
                     this.photoalbumItem = json;
                 });
         },
-        computed: {
-            swiper() {
-                return this.$refs.PhotoalbumsItemSwiper.$swiper
-            }
-        },
         components: {
-            Swiper,
-            SwiperSlide
+            Hooper,
+            Slide
         }
     }
 </script>

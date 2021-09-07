@@ -1,9 +1,9 @@
 <template>
     <div style="width: 100%;">
         <div class="banner">
-            <swiper ref="IndexBannerSwiper" :options="swiperIndexOptions" class="IndexBannerSwiper">
-                <swiper-slide v-for="banner in banners" :key="'banner' + banner.id" class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></swiper-slide>
-            </swiper>
+            <hooper :settings="indexHooper">
+                <slide v-for="banner in banners" :key="'banner' + banner.id" class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></slide>
+            </hooper>
         </div>
 
         <div class="headline">
@@ -72,8 +72,8 @@
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    import { Hooper, Slide } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
         data() {
@@ -84,15 +84,12 @@
                 schemes: [],
                 banners: [],
                 photoalbum_last: {},
-                swiperIndexOptions: {
-                    slidesPerView: 1,
-                    speed: 800,
-                    loop: true,
-                    autoplay: {
-                        delay: 3500,
-                        disableOnInteraction: false,
-                        waitForTransition: false,
-                    },
+                indexHooper: {
+                    itemsToShow: 1,
+                    centerMode: true,
+                    autoPlay: true,
+                    playSpeed: 3000,
+                    infiniteScroll: true,
                 },
                 slider_prev_next: false,
             }
@@ -127,35 +124,11 @@
                 .then(response => response.json())
                 .then(json => {
                     this.photoalbum_last = json;
-                    setTimeout(() => {
-                        this.swiperArrows()
-                    }, 2000);
                 });
         },
         methods: {
             GoToPage(id, types) {
-                var swprs_index = document.querySelectorAll('.IndexBannerSwiper');
-                [].forEach.call(swprs_index, function(swpr_index) {
-                    const swiper_index = document.querySelector('.IndexBannerSwiper').swiper;
-                    swiper_index.slideTo(0, false)
-                    swiper_index.autoplay.stop()
-                    //console.log(swiper_index)
-                });
-
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
-                //this.$refs.IndexBannerSwiper.$swiper.slideTo(0, false)
-
-                if(types[0].id === 3) {
-                    setTimeout(() => {
-                        var swprs_p3 = document.querySelectorAll('.Page3Swiper');
-                        [].forEach.call(swprs_p3, function(swpr_p3) {
-                            const swiper_p3 = document.querySelector('.Page3Swiper').swiper;
-                            swiper_p3.autoplay.start()
-                            swiper_p3.slideNext(500, true)
-                            //console.log(swiper_p3)
-                        });
-                    }, 3000);
-                }
 
                 if(types[0].id === 5) {
                     this.$parent.reset_video = true
@@ -163,24 +136,19 @@
             },
             GoToPhotoalbums() {
                 this.$router.push({name: 'khram_Photoalbums'})
-                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             GoToVideoalbums() {
                 this.$router.push({name: 'khram_Videoalbums'})
-                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             GoToReviews() {
                 this.$router.push({name: 'khram_Reviews'})
-                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             GoToRoutes() {
                 this.$router.push({name: 'khram_Routes'})
-                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
                 this.$parent.reset_routes = true
             },
             GoToNews() {
                 this.$router.push({name: 'khram_News'})
-                //this.$refs.KhramIndexAllSwiper.$swiper.slideTo(0, false)
             },
             swiperArrows() {
                 if(document.querySelectorAll('.swiper-slide').length > 60) {
@@ -191,8 +159,8 @@
             },
         },
         components: {
-            Swiper,
-            SwiperSlide,
+            Hooper,
+            Slide
         },
     }
 </script>

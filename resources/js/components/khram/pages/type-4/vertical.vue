@@ -4,34 +4,63 @@
             <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
-        <div class="gallery-detail" style="padding: 0;">
-            <swiper ref="Page4Swiper" :options="swiperPage4Options" class="Page4Swiper">
-                <swiper-slide v-for="photoalbumPic in page.gallery" :key="photoalbumPic" class="gallery-detail-item">
-                    <img :src="photoalbumPic">
-                </swiper-slide>
-                <div class="swiper-button-prev" slot="button-prev"></div>
-                <div class="swiper-button-next" slot="button-next"></div>
-            </swiper>
+        <div style="padding: 0;">
+            <hooper :settings="type4Hooper">
+                <slide v-if="page.gallery && page.gallery.length" class="gal-slide">
+                    <div class="row">
+                        <div v-for="photoalbumPic in page.gallery.slice(0,9)" :key="photoalbumPic" class="col-4">
+                            <div @click="openModal(photoalbumPic)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 9" class="gal-slide">
+                    <div class="row">
+                        <div v-for="photoalbumPic in page.gallery.slice(9,18)" :key="photoalbumPic" class="col-4">
+                            <div @click="openModal(photoalbumPic)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 18" class="gal-slide">
+                    <div class="row">
+                        <div v-for="photoalbumPic in page.gallery.slice(18,27)" :key="photoalbumPic" class="col-4">
+                            <div @click="openModal(photoalbumPic)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 27" class="gal-slide">
+                    <div class="row">
+                        <div v-for="photoalbumPic in page.gallery.slice(27,36)" :key="photoalbumPic" class="col-4">
+                            <div @click="openModal(photoalbumPic)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+            </hooper>
+        
+            <div v-if="modal" class="t4modal">
+                <img :src="modal_image">
+                <div @click="closeModal()" class="t4modal_close">&times;</div>
+            </div>
+        
         </div>
 
     </div>
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    import { Hooper, Slide } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
         data() {
             return {
                 page: {},
-                swiperPage4Options: {
-                    slidesPerView: 1,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                }
+                type4Hooper: {
+                    itemsToShow: 1,
+                    centerMode: true,
+                },
+                slider_prev_next: false,
+                modal: false,
+                modal_image: '',
             }
         },
         created() {
@@ -39,11 +68,25 @@
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
+                    if (json.gallery.length > 9) {
+                        this.slider_prev_next = true
+                    } else {
+                        this.slider_prev_next = false
+                    }
                 });
         },
+        methods: {
+            openModal(img) {
+                this.modal_image = img
+                this.modal = true
+            },
+            closeModal() {
+                this.modal = false
+            }
+        },
         components: {
-            Swiper,
-            SwiperSlide
+            Hooper,
+            Slide
         }
     }
 </script>

@@ -4,90 +4,84 @@
             <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
-        <swiper ref="Page2Swiper" :options="swiperPage2Options" class="Page2Swiper">
+        <hooper ref="type2Hooper" :settings="type2Hooper">
 
-            <swiper-slide v-if="page.text && page.text.length > 20" class="type2slider-slide">
+            <slide v-if="page.text && page.text.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text2 && page.text2.length > 20" class="type2slider-slide">
+            <slide v-if="page.text2 && page.text2.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text2" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text3 && page.text3.length > 20" class="type2slider-slide">
+            <slide v-if="page.text3 && page.text3.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text3" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text4 && page.text4.length > 20" class="type2slider-slide">
+            <slide v-if="page.text4 && page.text4.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text4" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text5 && page.text5.length > 20" class="type2slider-slide">
+            <slide v-if="page.text5 && page.text5.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text5" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text6 && page.text6.length > 20" class="type2slider-slide">
+            <slide v-if="page.text6 && page.text6.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text6" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text7 && page.text7.length > 20" class="type2slider-slide">
+            <slide v-if="page.text7 && page.text7.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text7" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text8 && page.text8.length > 20" class="type2slider-slide">
+            <slide v-if="page.text8 && page.text8.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text8" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text9 && page.text9.length > 20" class="type2slider-slide">
+            <slide v-if="page.text9 && page.text9.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text9" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <swiper-slide v-if="page.text10 && page.text10.length > 20" class="type2slider-slide">
+            <slide v-if="page.text10 && page.text10.length > 20" class="type2slider-slide">
                 <div class="type2slider-item">
                     <div v-html="page.text10" class="type2slider-item-inner"></div>
                 </div>
-            </swiper-slide>
+            </slide>
 
-            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
-        </swiper>
+        </hooper>
 
     </div>
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    import { Hooper, Slide } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
         data() {
             return {
                 page: {},
-                swiperPage2Options: {
-                    slidesPerView: 1,
-                    //simulateTouch: false,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
+                type2Hooper: {
+                    itemsToShow: 1,
+                    centerMode: true,
                 },
                 slider_prev_next: true,
             }
@@ -98,15 +92,27 @@
                 .then(json => {
                     this.page = json;
                     if (json.gallery.length > 3) {
-                        this.swiperPage2Options.centerInsufficientSlides = false
+                        //this.swiperPage2Options.centerInsufficientSlides = false
                     } else {
-                        this.swiperPage2Options.centerInsufficientSlides = true
+                        //this.swiperPage2Options.centerInsufficientSlides = true
                     }
                 });
         },
+        mounted() {
+            this.$watch(
+            "$parent.$parent.reset_hooper",
+            (new_value, old_value) => {
+                //console.log(old_value + '->' + new_value)
+                if(old_value=== false && new_value === true) {
+                    this.$refs.type2Hooper.slideTo(0)
+                    this.$parent.$parent.reset_hooper = false
+                }
+            }
+            );
+        },
         components: {
-            Swiper,
-            SwiperSlide
+            Hooper,
+            Slide
         }
     }
 </script>

@@ -6,14 +6,11 @@
                 <h1 class="h1-page">{{ page.title }}</h1>
             </div>
 
-            <swiper ref="Page3Swiper" :options="swiperPage3Options" class="Page3Swiper">
-                <swiper-slide v-for="pic in page.gallery" :key="pic" class="type3slider">
+            <hooper ref="type3Hooper" :settings="type3Hooper">
+                <slide v-for="pic in page.gallery" :key="pic" class="type3slider">
                     <div class="type3slider-item" v-bind:style="{ 'background-image': 'url(' + pic + ')' }"></div>
-                </swiper-slide>
-                <!--<div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>-->
-                
-            </swiper>
+                </slide>
+            </hooper>
 
             <div class="page-detail-text mb-0" style="height: 47vh; padding: 0; padding-right: 1vh;">
                 <div v-html="page.text"></div>
@@ -25,26 +22,19 @@
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/css/swiper.css'
+    import { Hooper, Slide } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
         data() {
             return {
                 page: [],
-                swiperPage3Options: {
-                    slidesPerView: 1,
-                    speed: 800,
-                    loop: false,
-                    autoplay: {
-                        delay: 3500,
-                        disableOnInteraction: false,
-                        waitForTransition: false,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
+                type3Hooper: {
+                    itemsToShow: 1,
+                    centerMode: true,
+                    autoPlay: true,
+                    playSpeed: 3000,
+                    infiniteScroll: true,
                 },
                 slider_prev_next: true,
             }
@@ -55,19 +45,15 @@
                 .then(json => {
                     this.page = json;
                     if (json.gallery.length > 1) {
-                        this.swiperPage3Options.loop = true
-                        this.swiperPage3Options.allowTouchMove = true
                         this.slider_prev_next = true
                     } else {
-                        this.swiperPage3Options.loop = false
-                        this.swiperPage3Options.allowTouchMove = false
                         this.slider_prev_next = false
                     }
                 });
         },
         components: {
-            Swiper,
-            SwiperSlide
+            Hooper,
+            Slide
         }
     }
 </script>
