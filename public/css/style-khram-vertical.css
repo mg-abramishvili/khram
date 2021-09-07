@@ -508,6 +508,7 @@ border-color: #777777 transparent transparent transparent;
     overflow: hidden;
     box-shadow: 0 0.1vh 1.5vh rgba(0, 5, 77, 0.15);
     height: 25vh;
+    margin-bottom: 1.5vh;
 }
 
 .t6-button_inner:before {

@@ -6,6 +6,9 @@
                 <h1 class="h1-page">{{ page.title }}</h1>
             </div>
 
+            <button @click.prevent="slidePrev">prev</button>
+            <button @click.prevent="slideNext">next</button>
+
             <hooper ref="type3Hooper" :settings="type3Hooper">
                 <slide v-for="pic in page.gallery" :key="pic" class="type3slider">
                     <div class="type3slider-item" v-bind:style="{ 'background-image': 'url(' + pic + ')' }"></div>
@@ -50,6 +53,14 @@
                         this.slider_prev_next = false
                     }
                 });
+        },
+        methods: {
+            slidePrev() {
+                this.$refs.type3Hooper.slidePrev();
+            },
+            slideNext() {
+                this.$refs.type3Hooper.slideNext();
+            },
         },
         components: {
             Hooper,

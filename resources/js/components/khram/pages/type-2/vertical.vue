@@ -4,6 +4,9 @@
             <h1 class="h1-page">{{ page.title }}</h1>
         </div>
 
+        <button @click.prevent="slidePrev">prev</button>
+        <button @click.prevent="slideNext">next</button>
+
         <hooper ref="type2Hooper" :settings="type2Hooper">
 
             <slide v-if="page.text && page.text.length > 20" class="type2slider-slide">
@@ -98,17 +101,16 @@
                     }
                 });
         },
-        mounted() {
-            this.$watch(
-            "$parent.$parent.reset_hooper",
-            (new_value, old_value) => {
-                //console.log(old_value + '->' + new_value)
-                if(old_value=== false && new_value === true) {
-                    this.$refs.type2Hooper.slideTo(0)
-                    this.$parent.$parent.reset_hooper = false
-                }
-            }
-            );
+        methods: {
+            slidePrev() {
+                this.$refs.type2Hooper.slidePrev();
+            },
+            slideNext() {
+                this.$refs.type2Hooper.slideNext();
+            },
+            slideToZero() {
+                this.$refs.type2Hooper.slideTo(0);
+            },
         },
         components: {
             Hooper,

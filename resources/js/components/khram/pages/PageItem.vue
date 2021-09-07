@@ -4,11 +4,11 @@
         <div v-for="type in page.types" :key="type.id" class="container" style="position: relative; background: transparent;">
             <div class="page-item">
                 <KhramPageType1Vertical v-if="type.id == '1'" />
-                <KhramPageType2Vertical v-if="type.id == '2'" />
+                <KhramPageType2Vertical v-if="type.id == '2'" ref="type2ref" />
                 <KhramPageType3Vertical v-if="type.id == '3'" />
                 <KhramPageType4Vertical v-if="type.id == '4'" />
                 <KhramPageType5Vertical v-if="type.id == '5'" />
-                <KhramPageType6Vertical v-if="type.id == '6'" />
+                <KhramPageType6Vertical v-if="type.id == '6'" ref="type6ref" />
                 <KhramPageType7Vertical v-if="type.id == '7'" />
                 <KhramPageType9Vertical v-if="type.id == '9'" />
                 <KhramPageType10Vertical v-if="type.id == '10'" />
@@ -86,13 +86,22 @@
         },
         methods: {
             GoBack(id) {
-                this.$parent.reset_hooper = true
+                if(this.page.types[0].id === 2) {
+                    this.$refs.type2ref[0].slideToZero()
+                }
+                if(this.page.types[0].id === 6) {
+                    this.$refs.type6ref[0].slideToZero()
+                }
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
             },
             GoHome() {
-                this.$parent.reset_hooper = true
+                if(this.page.types[0].id === 2) {
+                    this.$refs.type2ref[0].slideToZero()
+                }
+                if(this.page.types[0].id === 6) {
+                    this.$refs.type6ref[0].slideToZero()
+                }
                 this.$router.push({name: 'khram_Home'})
-                
             },
         },
         components: {
