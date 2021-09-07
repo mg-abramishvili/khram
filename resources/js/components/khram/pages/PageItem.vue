@@ -90,6 +90,7 @@
                 this.$router.push({name: 'khram_PageItem', params: {id: id}})
             },
             GoHome() {
+                this.$parent.reset_hooper = true
                 this.$router.push({name: 'khram_Home'})
                 
             },

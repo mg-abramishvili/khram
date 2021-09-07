@@ -2901,6 +2901,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     GoHome: function GoHome() {
+      this.$parent.reset_hooper = true;
       this.$router.push({
         name: 'khram_Home'
       });
