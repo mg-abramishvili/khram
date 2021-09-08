@@ -8,7 +8,7 @@
             <button @click.prevent="slidePrev" class="hooper_nav_button hooper_nav_button_prev"></button>
             <button @click.prevent="slideNext" class="hooper_nav_button hooper_nav_button_next"></button>
             
-            <hooper :settings="type4Hooper">
+            <hooper ref="type4Hooper" :settings="type4Hooper">
                 <slide v-if="page.gallery && page.gallery.length" class="gal-slide">
                     <div class="row">
                         <div v-for="photoalbumPic in page.gallery.slice(0,9)" :key="photoalbumPic" class="col-4">
@@ -40,7 +40,7 @@
             </hooper>
         
             <div v-if="modal" class="t4modal">
-                <hooper :settings="type4DHooper">
+                <hooper ref="type4DHooper" :settings="type4DHooper">
                     <slide v-for="photoalbumPic in page.gallery" :key="photoalbumPic">
                         <img :src="photoalbumPic">
                     </slide>

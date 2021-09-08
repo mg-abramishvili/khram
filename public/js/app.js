@@ -30659,7 +30659,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "hooper",
-          { attrs: { settings: _vm.type4Hooper } },
+          { ref: "type4Hooper", attrs: { settings: _vm.type4Hooper } },
           [
             _vm.page.gallery && _vm.page.gallery.length
               ? _c("slide", { staticClass: "gal-slide" }, [
@@ -30795,7 +30795,10 @@ var render = function() {
               [
                 _c(
                   "hooper",
-                  { attrs: { settings: _vm.type4DHooper } },
+                  {
+                    ref: "type4DHooper",
+                    attrs: { settings: _vm.type4DHooper }
+                  },
                   _vm._l(_vm.page.gallery, function(photoalbumPic) {
                     return _c("slide", { key: photoalbumPic }, [
                       _c("img", { attrs: { src: photoalbumPic } })
