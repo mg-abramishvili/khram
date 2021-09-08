@@ -3305,6 +3305,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3312,6 +3319,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       page: {},
       type4Hooper: {
+        itemsToShow: 1,
+        centerMode: true
+      },
+      type4DHooper: {
         itemsToShow: 1,
         centerMode: true
       },
@@ -3336,6 +3347,12 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    slidePrev: function slidePrev() {
+      this.$refs.type4Hooper.slidePrev();
+    },
+    slideNext: function slideNext() {
+      this.$refs.type4Hooper.slideNext();
+    },
     openModal: function openModal(img) {
       this.modal_image = img;
       this.modal = true;
@@ -30620,6 +30637,26 @@ var render = function() {
       "div",
       { staticStyle: { padding: "0" } },
       [
+        _c("button", {
+          staticClass: "hooper_nav_button hooper_nav_button_prev",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.slidePrev($event)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "hooper_nav_button hooper_nav_button_next",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.slideNext($event)
+            }
+          }
+        }),
+        _vm._v(" "),
         _c(
           "hooper",
           { attrs: { settings: _vm.type4Hooper } },
@@ -30752,22 +30789,36 @@ var render = function() {
         ),
         _vm._v(" "),
         _vm.modal
-          ? _c("div", { staticClass: "t4modal" }, [
-              _c("img", { attrs: { src: _vm.modal_image } }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "t4modal_close",
-                  on: {
-                    click: function($event) {
-                      return _vm.closeModal()
+          ? _c(
+              "div",
+              { staticClass: "t4modal" },
+              [
+                _c(
+                  "hooper",
+                  { attrs: { settings: _vm.type4DHooper } },
+                  _vm._l(_vm.page.gallery, function(photoalbumPic) {
+                    return _c("slide", { key: photoalbumPic }, [
+                      _c("img", { attrs: { src: photoalbumPic } })
+                    ])
+                  }),
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "t4modal_close",
+                    on: {
+                      click: function($event) {
+                        return _vm.closeModal()
+                      }
                     }
-                  }
-                },
-                [_vm._v("×")]
-              )
-            ])
+                  },
+                  [_vm._v("×")]
+                )
+              ],
+              1
+            )
           : _vm._e()
       ],
       1

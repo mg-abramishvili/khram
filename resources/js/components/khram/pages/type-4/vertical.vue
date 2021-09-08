@@ -5,6 +5,9 @@
         </div>
 
         <div style="padding: 0;">
+            <button @click.prevent="slidePrev" class="hooper_nav_button hooper_nav_button_prev"></button>
+            <button @click.prevent="slideNext" class="hooper_nav_button hooper_nav_button_next"></button>
+            
             <hooper :settings="type4Hooper">
                 <slide v-if="page.gallery && page.gallery.length" class="gal-slide">
                     <div class="row">
@@ -37,7 +40,11 @@
             </hooper>
         
             <div v-if="modal" class="t4modal">
-                <img :src="modal_image">
+                <hooper :settings="type4DHooper">
+                    <slide v-for="photoalbumPic in page.gallery" :key="photoalbumPic">
+                        <img :src="photoalbumPic">
+                    </slide>
+                </hooper>
                 <div @click="closeModal()" class="t4modal_close">&times;</div>
             </div>
         
@@ -55,6 +62,10 @@
             return {
                 page: {},
                 type4Hooper: {
+                    itemsToShow: 1,
+                    centerMode: true,
+                },
+                type4DHooper: {
                     itemsToShow: 1,
                     centerMode: true,
                 },
@@ -76,13 +87,19 @@
                 });
         },
         methods: {
+            slidePrev() {
+                this.$refs.type4Hooper.slidePrev();
+            },
+            slideNext() {
+                this.$refs.type4Hooper.slideNext();
+            },
             openModal(img) {
                 this.modal_image = img
                 this.modal = true
             },
             closeModal() {
                 this.modal = false
-            }
+            },
         },
         components: {
             Hooper,
