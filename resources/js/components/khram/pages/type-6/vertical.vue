@@ -7,8 +7,8 @@
                 <h1 class="h1-page">{{ page.title }}</h1>
             </div>
 
-            <button @click.prevent="slidePrev">prev</button>
-            <button @click.prevent="slideNext">next</button>
+            <button v-if="slider_prev_next" @click.prevent="slidePrev" class="hooper_nav_button hooper_nav_button_prev"></button>
+            <button v-if="slider_prev_next" @click.prevent="slideNext" class="hooper_nav_button hooper_nav_button_next"></button>
 
             <hooper ref="type6Hooper" :settings="type6Hooper">
                 <slide v-for="i in Math.ceil(page.children.length / 9)" :key="'type6h' + i" class="t6-button">

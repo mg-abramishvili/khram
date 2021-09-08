@@ -741,6 +741,61 @@ border-color: #777777 transparent transparent transparent;
     height: auto;
 }
 
+.hooper_nav_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3vh;
+    height: 3vh;
+    z-index: 999;
+    box-shadow: none;
+    border: 0;
+}
+
+.hooper_nav_button:focus {
+    outline: none;
+}
+
+.hooper_nav_button_prev {
+    background: url(/img/khram/hooper_prev.svg);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    left: 0;
+}
+
+.hooper_nav_button_next {
+    background: url(/img/khram/hooper_next.svg);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    right: 0;
+}
+
+.type-2 .hooper_nav_button_prev {
+    margin-left: -1.8vh;
+}
+
+.type-2 .hooper_nav_button_next {
+    margin-right: -1.8vh;
+}
+
+.type-3 .hooper_nav_button_prev {
+    margin-left: -1.8vh;
+}
+
+.type-3 .hooper_nav_button_next {
+    margin-right: -1.8vh;
+}
+
+.type-6 .hooper_nav_button_prev {
+    margin-left: -1.8vh;
+}
+
+.type-6 .hooper_nav_button_next {
+    margin-right: -1.8vh;
+}
+
 /* FOOTER */
 
 .footer {

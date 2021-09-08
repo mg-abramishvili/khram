@@ -6,14 +6,16 @@
                 <h1 class="h1-page">{{ page.title }}</h1>
             </div>
 
-            <button @click.prevent="slidePrev">prev</button>
-            <button @click.prevent="slideNext">next</button>
+            <div style="position: relative;">
+                <button v-if="slider_prev_next" @click.prevent="slidePrev" class="hooper_nav_button hooper_nav_button_prev"></button>
+                <button v-if="slider_prev_next" @click.prevent="slideNext" class="hooper_nav_button hooper_nav_button_next"></button>
 
-            <hooper ref="type3Hooper" :settings="type3Hooper">
-                <slide v-for="pic in page.gallery" :key="pic" class="type3slider">
-                    <div class="type3slider-item" v-bind:style="{ 'background-image': 'url(' + pic + ')' }"></div>
-                </slide>
-            </hooper>
+                <hooper ref="type3Hooper" :settings="type3Hooper">
+                    <slide v-for="pic in page.gallery" :key="pic" class="type3slider">
+                        <div class="type3slider-item" v-bind:style="{ 'background-image': 'url(' + pic + ')' }"></div>
+                    </slide>
+                </hooper>
+            </div>
 
             <div class="page-detail-text mb-0" style="height: 47vh; padding: 0; padding-right: 1vh;">
                 <div v-html="page.text"></div>
@@ -49,8 +51,10 @@
                     this.page = json;
                     if (json.gallery.length > 1) {
                         this.slider_prev_next = true
+                        this.type3Hooper.infiniteScroll = true
                     } else {
                         this.slider_prev_next = false
+                        this.type3Hooper.infiniteScroll = false
                     }
                 });
         },
