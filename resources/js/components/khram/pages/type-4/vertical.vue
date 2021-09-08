@@ -11,29 +11,64 @@
             <hooper ref="type4Hooper" :settings="type4Hooper">
                 <slide v-if="page.gallery && page.gallery.length" class="gal-slide">
                     <div class="row">
-                        <div v-for="(photoalbumPic, index) in page.gallery.slice(0,9)" :key="photoalbumPic" class="col-4">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(0,4)" :key="photoalbumPic" class="col-6">
                             <div @click="openModal(index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
                         </div>
                     </div>
                 </slide>
-                <slide v-if="page.gallery && page.gallery.length > 9" class="gal-slide">
+                <slide v-if="page.gallery && page.gallery.length > 4" class="gal-slide">
                     <div class="row">
-                        <div v-for="(photoalbumPic, index) in page.gallery.slice(9,18)" :key="photoalbumPic" class="col-4">
-                            <div @click="openModal(9 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(4,8)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(4 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
                         </div>
                     </div>
                 </slide>
-                <slide v-if="page.gallery && page.gallery.length > 18" class="gal-slide">
+                <slide v-if="page.gallery && page.gallery.length > 8" class="gal-slide">
                     <div class="row">
-                        <div v-for="(photoalbumPic, index) in page.gallery.slice(18,27)" :key="photoalbumPic" class="col-4">
-                            <div @click="openModal(18 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(8,12)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(8 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
                         </div>
                     </div>
                 </slide>
-                <slide v-if="page.gallery && page.gallery.length > 27" class="gal-slide">
+                <slide v-if="page.gallery && page.gallery.length > 12" class="gal-slide">
                     <div class="row">
-                        <div v-for="(photoalbumPic, index) in page.gallery.slice(27,36)" :key="photoalbumPic" class="col-4">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(11,15)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(11 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 16" class="gal-slide">
+                    <div class="row">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(15,19)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(15 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 20" class="gal-slide">
+                    <div class="row">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(19,23)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(19 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 24" class="gal-slide">
+                    <div class="row">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(23,27)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(23 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 28" class="gal-slide">
+                    <div class="row">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(27,31)" :key="photoalbumPic" class="col-6">
                             <div @click="openModal(27 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
+                        </div>
+                    </div>
+                </slide>
+                <slide v-if="page.gallery && page.gallery.length > 32" class="gal-slide">
+                    <div class="row">
+                        <div v-for="(photoalbumPic, index) in page.gallery.slice(31,35)" :key="photoalbumPic" class="col-6">
+                            <div @click="openModal(31 + index)" class="gal_image" v-bind:style="{ 'background-image': 'url(' + photoalbumPic + ')' }"></div>
                         </div>
                     </div>
                 </slide>
@@ -103,6 +138,7 @@
             slideToZero() {
                 this.$refs.type4Hooper.slideTo(0);
                 this.$refs.type4DHooper.slideTo(0);
+                this.closeModal();
             },
             openModal(index) {
                 this.$refs.type4DHooper.slideTo(index);
