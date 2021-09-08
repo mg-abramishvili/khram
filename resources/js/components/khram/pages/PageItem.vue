@@ -6,7 +6,7 @@
                 <KhramPageType1Vertical v-if="type.id == '1'" />
                 <KhramPageType2Vertical v-if="type.id == '2'" ref="type2ref" />
                 <KhramPageType3Vertical v-if="type.id == '3'" />
-                <KhramPageType4Vertical v-if="type.id == '4'" />
+                <KhramPageType4Vertical v-if="type.id == '4'" ref="type4ref" />
                 <KhramPageType5Vertical v-if="type.id == '5'" />
                 <KhramPageType6Vertical v-if="type.id == '6'" ref="type6ref" />
                 <KhramPageType7Vertical v-if="type.id == '7'" />
@@ -89,6 +89,9 @@
                 if(this.page.types[0].id === 2) {
                     this.$refs.type2ref[0].slideToZero()
                 }
+                if(this.page.types[0].id === 4) {
+                    this.$refs.type4ref[0].slideToZero()
+                }
                 if(this.page.types[0].id === 6) {
                     this.$refs.type6ref[0].slideToZero()
                 }
@@ -97,6 +100,9 @@
             GoHome() {
                 if(this.page.types[0].id === 2) {
                     this.$refs.type2ref[0].slideToZero()
+                }
+                if(this.page.types[0].id === 4) {
+                    this.$refs.type4ref[0].slideToZero()
                 }
                 if(this.page.types[0].id === 6) {
                     this.$refs.type6ref[0].slideToZero()

@@ -447,48 +447,56 @@ border-color: #777777 transparent transparent transparent;
 }
 
 .type-4 .gal_image {
-    height: 26vh;
+    height: 24.65vh;
     background-size: cover;
     background-position: 50% 50%;
     border-radius: 1vh;
-    margin-bottom: 1vh;
+    margin: 1vh 0.5vh;
 }
 
 .type-4 .t4modal {
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
+    top: 8vh;
     z-index: 999999;
-    width: 100vw;
-    height: 100vh;
-    background-color: gray;
-    margin-top: -5.5vh;
-    margin-left: -4vw;
+    width: 99vw;
+    height: 80vh;
+    background-color: #c1e5f5;
+    margin-left: -2vh;
+}
+
+.type-4 .modal_hidden {
+    visibility: hidden;
+}
+
+.type-4 .modal_visible {
+    visibility: visible;
 }
 
 .type-4 .t4modal img {
     width: auto;
     height: auto;
-    max-width: 100vw;
-    max-height: 100vh;
+    max-width: 80vw;
+    max-height: 80vh;
+    margin: 0 auto;
+    display: block;
 }
 
 .type-4 .t4modal_close {
     position: absolute;
-    top: 3vh;
-    right: 3vh;
-    font-size: 7vh;
+    top: -2.5vh;
+    right: 1vh;
+    font-size: 5.5vh;
     font-weight: 400;
     z-index: 110;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     background-color: blue;
-    width: 7vh;
-    height: 7vh;
+    width: 6vh;
+    height: 6vh;
     text-align: center;
-    line-height: 1.05;
+    line-height: 1.15;
     border-radius: 100%;
 }
 
@@ -785,6 +793,14 @@ border-color: #777777 transparent transparent transparent;
 }
 
 .type-3 .hooper_nav_button_next {
+    margin-right: -1.8vh;
+}
+
+.type-4 .hooper_nav_button_prev {
+    margin-left: -1.8vh;
+}
+
+.type-4 .hooper_nav_button_next {
     margin-right: -1.8vh;
 }
 
