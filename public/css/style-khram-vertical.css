@@ -749,6 +749,10 @@ border-color: #777777 transparent transparent transparent;
     height: auto;
 }
 
+.hooper:focus {
+    outline: none;
+}
+
 .hooper_nav_button {
     position: absolute;
     top: 50%;
