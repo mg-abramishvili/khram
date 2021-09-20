@@ -574,8 +574,8 @@ border-color: #777777 transparent transparent transparent;
 }
 
 .type-7 iframe {
-    margin-bottom: 2vh;
-    height: 56vh;
+    margin-bottom: 0;
+    height: 80vh;
 }
 
 .excel-item {
