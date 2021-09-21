@@ -1,7 +1,7 @@
 <template>
     <div style="width: 100%;">
         <div class="banner">
-            <hooper :settings="indexHooper">
+            <hooper ref="indexHooper" :settings="indexHooper">
                 <slide v-for="banner in banners" :key="'banner' + banner.id" class="index-banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></slide>
             </hooper>
         </div>
@@ -133,6 +133,7 @@
                 if(types[0].id === 5) {
                     this.$parent.reset_video = true
                 }
+                //this.$refs.indexHooper.update()
             },
             GoToPhotoalbums() {
                 this.$router.push({name: 'khram_Photoalbums'})

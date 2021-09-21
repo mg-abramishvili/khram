@@ -2498,7 +2498,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (types[0].id === 5) {
         this.$parent.reset_video = true;
-      }
+      } //this.$refs.indexHooper.update()
+
     },
     GoToPhotoalbums: function GoToPhotoalbums() {
       this.$router.push({
@@ -29593,7 +29594,7 @@ var render = function() {
       [
         _c(
           "hooper",
-          { attrs: { settings: _vm.indexHooper } },
+          { ref: "indexHooper", attrs: { settings: _vm.indexHooper } },
           _vm._l(_vm.banners, function(banner) {
             return _c("slide", {
               key: "banner" + banner.id,
